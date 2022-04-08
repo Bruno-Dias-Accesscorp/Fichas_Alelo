@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css'>
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="/public/images/ico.png">
+    <title>Ficha</title>
+</head>
+
+<body>
+
+    <div class="container col-md-12">
+        <form action="/ficha_veloe" method="POST">
+            <div class="container-fluid">
+                <div class="container-fluid col-md-8"
+                    style="margin-top: 40px; margin-bottom: 10px; padding: 20px;border-radius: 8px;border-left-width:3px;border-bottom-width:3px;border-right-width:3px;border-top-width: 9px;border-top-color:darkviolet;border-right: white;border-left-color: white;border-bottom-color: white; border-style: solid;background-color: white;">
+                    <div class="d-flex justify-content-center col-md-12"
+                        style="font-family: Verdana, Geneva, Tahoma, sans-serif; padding-bottom: 20px;">
+                        <h2><b>Ficha Veloe</b></h2>
+                    </div>
+                </div>
+
+                <div id="accordion" class="container-fluid col-md-8"
+                    style="margin-top: 10px; margin-bottom: 10px; padding: 20px;border-radius: 8px;border-left-width:5px;border-bottom-width:3px;border-right-width:3px;border-top-width: 3px;border-top-color:white;border-right: white;border-left-color: cornflowerblue;border-bottom-color: white; border-style: solid;background-color: white;">
+                    <div class="card-header" id="headingOne">
+                        <button disabled class="btn btn-outline-secondary dropdown-toggle" data-toggle="collapse"
+                            data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"
+                            style="border-color: whitesmoke;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+                            DADOS DO CONTRATANTE
+                        </button>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion"
+                        style="margin-top: 15px;">
+                        <div class="card-body">
+                            
+                            <div class="card col-md-12" style="margin-bottom: 15px; padding: 15px;">
+                                <div class="col-md-12">
+                                <div class="row" >
+                                    <div class="col-md-6">
+                                    <input type="text" name="CNPJ" maxlength="18" class="form-control" placeholder="CNPJ do Contratante">
+                                </div>
+                                
+                                    <div class="col-md-6">
+                                        <input type="text" name="NOME_FANTASIA" class="form-control" placeholder="Nome Fantasia">
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="col-md-8" style="margin-top: 15px;">
+                                    <input type="text" name="RAZAO_SOCIAL" class="form-control" placeholder="Razão Social">
+                                </div>
+                                
+                                <div class="col-md-12">
+                                    <div class="row" style="margin-top: 15px;">
+                                        <div class="form-group col-4">
+                                            <input type="number" class="form-control" name="INSCRICAO_MUNICIPAL"
+                                                placeholder="Inscrição Municipal">
+                                        </div>
+                                        <div class="col-4">
+
+                                            <select class="custom-select" name="TIPO_EMPRESA">
+                                                <option selected>Tipo de Empresa...</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9">9</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                                <option value="13">13</option>
+                                                <option value="14">14</option>
+                                            </select>
+
+                                        </div>
+                                        <div class="col-6 col-md-3">
+                                            <input type="date" class="form-control" tyle="margin-top: 15px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-4 col-md-4">
+                                            <input type="number" class="form-control" name="D117" aria-label="Amount (to the nearest dollar)" placeholder="Faturamento Médio Mensal - R$">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-8" style="margin-top: 15px;">
+                                    <input type="text" class="form-control" name="D15" placeholder="Endereço">
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="form-group col-3 col-md-3">
+                                            <input type="number" class="form-control" placeholder="Número">
+                                        </div>
+                                        <div class="form-group col-6 col-md-4">
+                                            <input type="text" class="form-control" placeholder="Complemento">
+                                        </div>
+                                        <div class="form-group col-6 col-md-5">
+                                            <input type="text" class="form-control" placeholder="Município">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="form-group col-md-6">
+                                            <input type="text" class="form-control" placeholder="Bairro">
+                                        </div>
+                                                                                <div class="col-3">
+                                            <select class="custom-select" id="inputGroupSelect04">
+                                                <option selected>UF...</option>
+                                                <option value="1">AC</option>
+                                                <option value="2">AL</option>
+                                                <option value="3">AM</option>
+                                                <option value="4">AP</option>
+                                                <option value="5">BA</option>
+                                                <option value="6">CE</option>
+                                                <option value="7">DF</option>
+                                                <option value="8">ES</option>
+                                                <option value="9">GO</option>
+                                                <option value="10">MA</option>
+                                                <option value="11">MG</option>
+                                                <option value="12">MS</option>
+                                                <option value="13">MT</option>
+                                                <option value="14">PA</option>
+                                                <option value="15">PB</option>
+                                                <option value="16">PE</option>
+                                                <option value="17">PI</option>
+                                                <option value="18">PR</option>
+                                                <option value="19">RO</option>
+                                                <option value="20">RJ</option>
+                                                <option value="21">RN</option>
+                                                <option value="22">RR</option>
+                                                <option value="23">RS</option>
+                                                <option value="24">SC</option>
+                                                <option value="25">SE</option>
+                                                <option value="26">SP</option>
+                                                <option value="27">TO</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="number" class="form-control" placeholder="CEP">
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="row justify-content-between">
+                                    <div class="col-12 col-md-8"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="accordion2" class="container-fluid col-md-8"
+                    style="margin-top: 10px; margin-bottom: 10px; padding: 20px;border-radius: 8px;border-left-width:5px;border-bottom-width:3px;border-right-width:3px;border-top-width: 3px;border-top-color:white;border-right: white;border-left-color: cornflowerblue;border-bottom-color: white; border-style: solid;background-color: white;">
+                    <div class="card-header" id="headingTwo">
+                        <button disabled class="btn btn-outline-secondary dropdown-toggle" data-toggle="collapse"
+                            data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne"
+                            style="border-color: whitesmoke;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+                            CONTATOS
+                        </button>
+                    </div>
+                    <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion2">
+                        <div class="card-body">
+                            <div class="card col-md-12"
+                                style="margin-bottom: 15px; margin-bottom: 15px; padding: 15px;">
+                                <div class="col-md-12" style="margin-top: 15px;">
+                                    <div class="row">
+                                        <div class="col-6 col-md-5">
+                                            <input type="text" class="form-control" placeholder="CPF Representante Legal">
+                                        </div>
+                                        <div class="col-6 col-md-6">
+                                            <select class="custom-select" id="inputGroupSelect04">
+                                                <option selected>Tipo de relação do representante Legal</option>
+                                                <option value="1">Proprietário</option>
+                                                <option value="2">Diretoria</option>
+                                                <option value="3">Gerência</option>
+                                                <option value="4">Supervisão</option>
+                                                <option value="5">Outros</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12" style="margin-top: 15px;">
+                                    <div class="row">
+                                        <div class="form-group col-6 col-md-3">
+                                            <input type="number" class="form-control" placeholder="DDD Principal">
+                                        </div>
+                                        <div class="form-group col-6 col-md-3">
+                                            <input type="tel" class="form-control" placeholder="Telefone Principal">
+                                        </div>
+                                        <div class="form-group col-6 col-md-3">
+                                            <input type="tel" class="form-control" placeholder="Ramal Principal">
+                                        </div>
+                                        <div class="form-group col-6 col-md-3">
+                                            <input type="date" class="form-control" tyle="margin-top: 15px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" placeholder="Nome Representante Legal">
+                                </div>
+
+                                <div class="col-md-8" style="margin-top: 15px">
+                                    <input type="email" class="form-control" placeholder="name@exemple.com">
+                                </div>
+                                <div class="col-md-12" style="margin-top: 15px;">
+                                    <div class="row">
+                                        <div class="form-group col-6 col-md-3">
+                                            <input type="number" class="form-control" placeholder="DDD do Contato">
+                                        </div>
+                                        <div class="form-group col-6 col-md-3">
+                                            <input type="tel" class="form-control" placeholder="Telefone do Contato">
+                                        </div>
+                                        <div class="form-group col-6 col-md-3">
+                                            <input type="tel" class="form-control" placeholder="Ramal do Contato">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" placeholder="Nome do Contato Empresarial">
+                                </div>
+
+                                <div class="col-md-8" style="margin-top: 15px">
+                                    <input type="email" class="form-control" placeholder="name@exemple.com">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="accordion3" class="container-fluid col-md-8"
+                    style="margin-top: 10px; margin-bottom: 10px; padding: 20px;border-radius: 8px;border-left-width:5px;border-bottom-width:3px;border-right-width:3px;border-top-width: 3px;border-top-color:white;border-right: white;border-left-color: cornflowerblue;border-bottom-color: white; border-style: solid;background-color: white;">
+                    <div class="card-header" id="headingTree">
+                        <button disabled class="btn btn-outline-secondary dropdown-toggle" data-toggle="collapse"
+                            data-target="#collapseTree" aria-expanded="true" aria-controls="collapseTree"
+                            style="border-color: whitesmoke;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+                            PRODUTO CONTRATADO
+                        </button>
+                    </div>
+                    <div id="collapseTree" class="collapse show" aria-labelledby="headingTree"
+                        data-parent="#accordion3">
+
+                        <div class="card-body">
+                            <div class="card" style="border-color: white; text-align: center;">
+                                <H5>Pré Pago</H5>
+                            </div>
+                                        <div class="card col-md-12"
+                                            style="padding: 15px;">
+                                            <div class="row">
+                                            <div class="col-md-4">
+                                                <input type="number" class="form-control"
+                                                    placeholder="Quantidade Total Veiculos">
+                                            </div>
+                                            <div class="col-md-4">
+                                                <input type="number" class="form-control"
+                                                    placeholder="Valor de Recarga">
+                                            </div>
+                                            <div class="col-4 col-md-4">
+                                                <select class="custom-select" id="inputGroupSelect04">
+                                                    <option selected>Meio de Pagamento...</option>
+                                                    <option value="1">Crédito em Conta</option>
+                                                    <option value="2">Débito em Conta</option>
+                                                    <option value="3">Cobrança Bancária</option>
+                                                    <option value="4">Cartão de Crédito</option>
+                                                    <option value="5">Boleto Web</option>
+                                                </select>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <div class="card" style="border-color: white; text-align: center;margin-top: 15px;">
+                                            <H5>Pós Pago</H5>
+                                        </div>
+                                <div class="card col-md-12" style="padding: 15px;">
+
+                                    <div class="row">
+                                        <div class="col-6 col-md-6">
+                                            <input type="number" class="form-control" placeholder="Limite Veloe">
+                                        </div>
+                                        <div class="col-6 col-md-6 ml-auto">
+                                            <select class="custom-select" id="inputGroupSelect04">
+                                                <option selected>Meio de Pagamento...</option>
+                                                <option value="1">Crédito em Conta</option>
+                                                <option value="2">Débito em Conta</option>
+                                                <option value="3">Cobrança Bancária</option>
+                                                <option value="4">Cartão de Crédito</option>
+                                                <option value="5">Boleto Web</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 col-md-2" style="margin-top: 15px;margin-bottom: 15px;">
+                                            <input type="number" class="form-control" placeholder="Banco">
+                                        </div>
+                                        <div class="col-6 col-md-2" style="margin-top: 15px;margin-bottom: 15px;">
+                                            <input type="number" class="form-control" placeholder="Agência">
+                                        </div>
+                                        <div class="col-6 col-md-2" style="margin-top: 15px;margin-bottom: 15px;">
+                                            <input type="number" class="form-control" placeholder="Dígito">
+                                        </div>
+                                        <div class="col-6 col-md-3" style="margin-top: 15px;margin-bottom: 15px;">
+                                            <input type="number" class="form-control" placeholder="Conta">
+                                        </div>
+                                        <div class="col-6 col-md-2" style="margin-top: 15px;margin-bottom: 15px;">
+                                            <input type="number" class="form-control" placeholder="Dígito">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <input type="text" class="form-control" placeholder="Limite de Crédito R$">
+                                        </div>
+                                        <div class="form-group col-6 col-md-3">
+                                            <input type="date" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-4 col-md-3">
+                                            <input type="date" class="form-control">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <input type="text" class="form-control" placeholder="Código Banco">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+                <div id="accordion4" class="container-fluid col-md-8"
+                    style="margin-top: 10px; margin-bottom: 10px; padding: 20px;border-radius: 8px;border-left-width:5px;border-bottom-width:3px;border-right-width:3px;border-top-width: 3px;border-top-color:white;border-right: white;border-left-color: cornflowerblue;border-bottom-color: white; border-style: solid;background-color: white;">
+                    <div class="card-header" id="headingFour">
+                        <button disabled class="btn btn-outline-secondary dropdown-toggle" data-toggle="collapse"
+                            data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour"
+                            style="border-color: whitesmoke;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+                            CONDIÇÕES COMERCIAIS
+                        </button>
+                    </div>
+                    <div id="collapseFour" class="collapse show" aria-labelledby="headingFour"
+                        data-parent="#accordion4">
+                        <div class="card-body">
+                                    <div class="col-12 col-md-12">
+                                        <div class="card col-md-12"
+                                            style="margin-bottom: 15px; margin-bottom: 15px; padding: 15px;">
+                                            <div class="card" style="border-color: white; text-align: center;">
+                                                <H5>Tarifas</H5>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="input-group mb-3">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">R$</span>
+                                                        </div>
+                                                        <input type="number" class="form-control"
+                                                            placeholder="Tarifa Mensal Preço de Lista">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">0,00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="input-group mb-3">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">R$</span>
+                                                        </div>
+                                                        <input type="number" class="form-control"
+                                                            placeholder="Tarifa Mensal Bonificada">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">0,00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="input-group mb-3">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">R$</span>
+                                                        </div>
+                                                        <input type="number" class="form-control"
+                                                            placeholder="Adesão">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">0,00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="input-group mb-3">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">R$</span>
+                                                        </div>
+                                                        <input type="number" class="form-control"
+                                                            placeholder="Entrega">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">0,00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="input-group mb-3">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">R$</span>
+                                                        </div>
+                                                        <input type="number" class="form-control"
+                                                            placeholder="Substituição da VeloeTag">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">0,00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                        <input type="number" class="form-control" placeholder="Quantidade de Meses Isenção">
+                                                    </div>
+                                                </div>
+
+                                                    <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="input-group mb-3">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">R$</span>
+                                                        </div>
+                                                        <input type="number" class="form-control"
+                                                            placeholder="Tarifa de Inativação">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">0,00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            
+                                                <div class="col-md-6">
+                                                    <div class="input-group mb-3">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">R$</span>
+                                                        </div>
+                                                        <input type="number" class="form-control"
+                                                            placeholder="Tarifa de Devolução de Saldo">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">0,00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                                <div class="row">
+
+                                                <div class="col-md-6">
+                                                    <div class="input-group mb-3">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">R$</span>
+                                                        </div>
+                                                        <input type="number" class="form-control"
+                                                            placeholder="Emissão de Extrato">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">0,00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            
+                                                <div class="col-md-6">
+                                                    <div class="input-group mb-3">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">R$</span>
+                                                        </div>
+                                                        <input type="number" class="form-control" placeholder="Tarifa de Emissão Emergencial">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">0,00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="input-group mb-3">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">R$</span>
+                                                        </div>
+                                                        <input type="number" class="form-control"
+                                                            placeholder="Rescisão">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">0,00</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input type="number" class="form-control" placeholder="Cód Promocional">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="accordion5" class="container-fluid col-md-8"
+                    style="margin-top: 10px; margin-bottom: 40px; padding-top: 20px;border-radius: 8px;border-left-width:5px;border-bottom-width:3px;border-right-width:3px;border-top-width: 3px;border-top-color:white;border-right: white;border-left-color: cornflowerblue;border-bottom-color: white; border-style: solid;background-color: white;">
+                    <div class="card-header" id="headingSix">
+                        <button disabled class="btn btn-outline-secondary dropdown-toggle" data-toggle="collapse"
+                            data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix"
+                            style="border-color: whitesmoke;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+                            ORIGEM DA VENDA
+                        </button>
+                    </div>
+                    <div id="collapseSix" class="collapse show" aria-labelledby="headingSix" data-parent="#accordion6">
+                        <div class="card-body">
+                            <div class="card col-md-12" style="padding: 15px;">
+                                <div class="row" style="margin-top: 15px">
+                                    <div class="col-6 col-md-4">
+                                        <input type="number" class="form-control" placeholder="Banco">
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <input type="number" class="form-control" placeholder="Agência">
+                                    </div>
+                                    <div class="col-6 col-md-2">
+                                        <input type="number" class="form-control" placeholder="Dígito">
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top: 15px">
+                                    <div class="col-6 col-md-4">
+                                        <input type="number" class="form-control" placeholder="DDD">
+                                    </div>
+                                    <div class="col-6 col-md-4">
+                                        <input type="number" class="form-control" placeholder="Telefone">
+                                    </div>
+                                    <div class="col-6 col-md-2">
+                                        <input type="number" class="form-control" placeholder="Ramal">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8" style="margin-top: 15px">
+                                        <input type="text" class="form-control" placeholder="Nome do Vendedor">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6 col-md-4" style="margin-top: 15px">
+                                        <input type="number" class="form-control" placeholder="Código do Vendedor">
+                                    </div>
+                                    <div class="col-6 col-md-4" style="margin-top: 15px">
+                                        <select class="custom-select" id="inputGroupSelect04">
+                                            <option selected>É um CPF o Código?...</option>
+                                            <option value="S">S</option>
+                                            <option value="N">N</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-4 col-md-2" style="margin-top: 15px">
+                                        <input type="date" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row" >
+                                    <div class="col-6 align-self-start">
+                                     
+                                    </div>
+                                    <div class="col-5 align-self-center">
+                                      
+                                    </div>
+                            <div class="col-1 align-self-end">
+                            <button class="btn btn-button" style="margin-top: 15px;">Finalizar</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('D15').addEventListener('input', function (e) {
+            var x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,3})(\d{0,3})(\d{0,4})(\d{0,2})/);
+            e.target.value = !x[2] ? x[1] : x[1] + '.' + x[2] + '.' + x[3] + '/' + x[4] + (x[5] ? '-' + x[5] : '');
+        });
+        let btn_menu = document.querySelector("#btn_menu");
+        let sidebar = document.querySelector(".sidebar");
+        let search = document.querySelector(".bx-search-alt-2")
+
+        btn_menu.onclick = function () {
+            sidebar.classList.toggle("active");
+        }
+        search.onclick = function () {
+            sidebar.classList.toggle("active");
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

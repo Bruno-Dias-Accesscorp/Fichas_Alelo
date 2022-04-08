@@ -7,16 +7,16 @@
 body {
   background-color: gainsboro;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  position: absolute; 
+  position: initial; 
   min-height: 100vh;
   width: 100%;
   /* overflow: hidden; */
 }
 
-.form{
+/* .form{
   position: absolute;
   margin-left: 140px;
-}
+} */
 
 
 .sidebar {
@@ -31,6 +31,7 @@ body {
 }
 .sidebar.active{
   width: 240px;
+  
 }
 
 
@@ -47,6 +48,7 @@ pointer-events: none;
 .sidebar.active .logo_content .logo{
 opacity: 1;
 pointer-events: none;
+
 }
 .logo_content .logo i{
   font-size: 28px;

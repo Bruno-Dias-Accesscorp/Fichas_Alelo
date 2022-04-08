@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
     "chart.js": "^3.5.0",
     "cookie-parser": "^1.4.5",
     "debug": "~2.6.9",
@@ -16,7 +17,11 @@
     "fs": "0.0.1-security",
     "http-errors": "~1.6.3",
     "morgan": "^1.9.1",
+    "mysql2": "^2.3.3",
     "nodemon": "^2.0.12",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "sequelize": "^6.12.0-alpha.1",
+    "sequelize-cli": "^6.3.0",
+    "yarn": "^1.22.17"
   }
 }
