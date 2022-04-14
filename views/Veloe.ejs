@@ -54,14 +54,14 @@
                                     </div>
                                 </div>
                                 <div class="col-md-8" style="margin-top: 15px;">
-                                    <input type="text" name="RAZAO_SOCIAL" id="D17" maxlength="40" class="form-control"
+                                    <input type="text" name="RAZAO_SOCIAL" id="D16" maxlength="40" class="form-control"
                                         placeholder="Razão Social">
                                 </div>
 
                                 <div class="col-md-12">
                                     <div class="row" style="margin-top: 15px;">
                                         <div class="form-group col-4">
-                                            <input type="number" class="form-control" name="INSCRICAO_MUNICIPAL"
+                                            <input type="text" class="form-control" id="D17" maxlength="20" name="INSCRICAO_MUNICIPAL"
                                                 placeholder="Inscrição Municipal">
                                         </div>
                                         <div class="col-4">
@@ -93,9 +93,15 @@
                                 <div class="col-md-12">
                                     <div class="row">
                                         <div class="col-4 col-md-4">
-                                            <input type="number" class="form-control" name="D117"
+
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">R$</span>
+                                                </div>
+                                            <input type="text" name="FATURAMENTO_MEDIO_MENSAL" id="D17" maxlength="13" class="form-control" name="D117"
                                                 aria-label="Amount (to the nearest dollar)"
                                                 placeholder="Faturamento Médio Mensal - R$">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -265,8 +271,7 @@
                             <div class="card col-md-12" style="padding: 15px;">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <input type="number" class="form-control"
-                                            placeholder="Quantidade Total Veiculos">
+                                        <input type="text" name="QUANTIDADE_TOTAL_VEICULOS" id="D17" maxlength="6" class="form-control" placeholder="Quantidade Total Veiculos">
                                     </div>
                                     <div class="col-md-4">
                                         <input type="number" class="form-control" placeholder="Valor de Recarga">
@@ -567,10 +572,10 @@
 
                                     </div>
                                     <div class="col-5 align-self-center">
-
+                                        
                                     </div>
                                     <div class="col-1 align-self-end">
-                                        <button class="btn btn-button" style="margin-top: 15px;">Finalizar</button>
+                                        <button class="btn btn-button" id="btn_sub" style="margin-top: 15px;">Finalizar</button>
                                     </div>
                                 </div>
                             </div>
@@ -598,7 +603,7 @@
                 var char = String.fromCharCode(e.keyCode);
 
                 console.log(char);
-                var pattern = '[a-zA-Z0-9]';
+                var pattern = '[a-zA-Z0-9-" "]';
                 if (char.match(pattern)) {
                     return true;
                 }
@@ -616,23 +621,13 @@
                 var char = String.fromCharCode(e.keyCode);
 
                 console.log(char);
-                var pattern = '[a-zA-Z0-9]';
+                var pattern = '[0-9]';
                 if (char.match(pattern)) {
                     return true;
                 }
             }
-            input.value = input.value.toUpperCase();
         });
-        let btn_menu = document.querySelector("#btn_menu");
-        let sidebar = document.querySelector(".sidebar");
-        let search = document.querySelector(".bx-search-alt-2")
 
-        btn_menu.onclick = function () {
-            sidebar.classList.toggle("active");
-        }
-        search.onclick = function () {
-            sidebar.classList.toggle("active");
-        }
     </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
