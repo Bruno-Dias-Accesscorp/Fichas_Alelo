@@ -74,11 +74,23 @@ module.exports = {
         let id_006 = campos.CNPJ.replace(/[^\d]+/g,'')
         
         let id_008 = campos.RAZAO_SOCIAL
+        let calcRazao = id_008.length
+        let valRazao = 40 - calcRazao
+
+        if(id_008.length < 40){
+            id_008 = id_008 + espacos.substring(0,valRazao)
+        }
         
         let id_007 = campos.NOME_FANTASIA
+        let calcFantasia = id_007.length
+        let valFantasia = 20 - calcFantasia
 
         if(id_007 == ""){
-            id_007 = id_008.substring(0,)
+            id_007 = id_008.substring(0,20)
+        }
+
+        if(id_007.length < 20){
+            id_007 = id_007 + espacos.substring(0,valFantasia)
         }
 
         let id_009 = campos.TIPO_EMPRESA
@@ -125,7 +137,11 @@ module.exports = {
         if(id_012 < 1000000000000){ id_012 = zeros.substring(0,1) + id_012 }
         }}}}}}}}}}}}
 
-        
+        let id_013 = espacos.substring(0,103)
+
+        let id_014 = id_008.substring(0,35)
+
+        let id_015 = espacos.substring(0,20)
 
         let id_016 = campos.INSCRICAO_MUNICIPAL
 
@@ -153,14 +169,15 @@ module.exports = {
 
             let id_017 = veloe_campos[4].valor
 
-            
+            let gerarLinha_2 = id_005 + id_006 + id_007 + id_008 + id_009 + id_010 + id_011 + id_012 + id_013 + id_014 + id_015 + id_016 + id_017 + "\r\n"
 
-        let gerarLinha_2 = id_005 + id_006 + id_007 + id_008 + id_009 + id_010 + id_011 + id_012 + id_013 + id_014 + id_015 + "\r\n"
+            console.log(id_008)
 
-        fs.writeFile('Veloe\\TERADE_' + id_002 + "_" + id_003 + ".txt", gerarLinha_1 + gerarLinha_2 + gerarLinha_3, (err)=> {
-            if (err) throw err;
-            console.log("O arquivo foi criado!");
-        })
+
+        // fs.writeFile('Veloe\\TERADE_' + id_002 + "_" + id_003 + ".txt", gerarLinha_1 + gerarLinha_2, (err)=> {
+        //     if (err) throw err;
+        //     console.log("O arquivo foi criado!");
+        // })
             res.render("veloe")
     },
 }
