@@ -64,7 +64,7 @@
                                             <input type="text" class="form-control" id="D17" maxlength="20" name="INSCRICAO_MUNICIPAL"
                                                 placeholder="Inscrição Municipal">
                                         </div>
-                                        <div class="col-4">
+                                        <div class="col-3">
 
                                             <select class="custom-select" name="TIPO_EMPRESA">
                                                 <option selected>Tipo de Empresa...</option>
@@ -85,49 +85,41 @@
                                             </select>
 
                                         </div>
-                                        <div class="col-6 col-md-3">
-                                            <input type="date" class="form-control" tyle="margin-top: 15px;">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="col-4 col-md-4">
-
+                                        <div class="col-5">
                                             <div class="input-group">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">R$</span>
                                                 </div>
                                             <input type="text" name="FATURAMENTO_MEDIO_MENSAL" id="D17" maxlength="13" class="form-control" name="D117"
                                                 aria-label="Amount (to the nearest dollar)"
-                                                placeholder="Faturamento Médio Mensal - R$">
+                                                placeholder="Faturamento Médio Mensal">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group col-md-8" style="margin-top: 15px;">
-                                    <input type="text" class="form-control" name="D15" placeholder="Endereço">
+                                <div class="form-group col-md-8">
+                                    <input type="text" class="form-control" name="NOME_LOGRADOURO" maxlength="50" placeholder="Endereço">
                                 </div>
                                 <div class="col-md-12">
                                     <div class="row">
                                         <div class="form-group col-3 col-md-3">
-                                            <input type="number" class="form-control" placeholder="Número">
+                                            <input type="text" class="form-control" name="NUMERO_LOGRADOURO" maxlength="5" placeholder="Número">
                                         </div>
                                         <div class="form-group col-6 col-md-4">
-                                            <input type="text" class="form-control" placeholder="Complemento">
+                                            <input type="text" class="form-control" name="COMPLEMENTO_LOGRADOURO" maxlength="25" placeholder="Complemento">
                                         </div>
                                         <div class="form-group col-6 col-md-5">
-                                            <input type="text" class="form-control" placeholder="Município">
+                                            <input type="text" class="form-control" name="MUNICIPIO_LOGRADOURO" maxlength="28" placeholder="Município">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="row">
                                         <div class="form-group col-md-6">
-                                            <input type="text" class="form-control" placeholder="Bairro">
+                                            <input type="text" class="form-control" name="BAIRRO_LOGRADOURO" maxlength="30" placeholder="Bairro">
                                         </div>
                                         <div class="col-3">
-                                            <select class="custom-select" id="inputGroupSelect04">
+                                            <select class="custom-select" name="UF" id="inputGroupSelect04">
                                                 <option selected>UF...</option>
                                                 <option value="1">AC</option>
                                                 <option value="2">AL</option>
@@ -159,7 +151,7 @@
                                             </select>
                                         </div>
                                         <div class="col-3">
-                                            <input type="number" class="form-control" placeholder="CEP">
+                                            <input type="text" class="form-control" name="CEP" maxlength="8" placeholder="CEP">
                                         </div>
 
                                     </div>
@@ -206,16 +198,16 @@
                                 <div class="col-md-12" style="margin-top: 15px;">
                                     <div class="row">
                                         <div class="form-group col-6 col-md-3">
-                                            <input type="number" class="form-control" placeholder="DDD Principal">
+                                            <input type="text" class="form-control" name="DDD_PRINCIPAL" maxlength="5" placeholder="DDD Principal">
                                         </div>
                                         <div class="form-group col-6 col-md-3">
-                                            <input type="tel" class="form-control" placeholder="Telefone Principal">
+                                            <input type="text" class="form-control" name="TELEFONE_PRINCIPAL" maxlength="12" placeholder="Telefone Principal">
                                         </div>
                                         <div class="form-group col-6 col-md-3">
-                                            <input type="tel" class="form-control" placeholder="Ramal Principal">
+                                            <input type="text" class="form-control" name="RAMAL_PRINCIPAL" maxlength="5" placeholder="Ramal Principal">
                                         </div>
                                         <div class="form-group col-6 col-md-3">
-                                            <input type="date" class="form-control" tyle="margin-top: 15px;">
+                                            <input type="date" class="form-control" name="DATA_VINCULO_EMPRESA" maxlength="8" tyle="margin-top: 15px;">
                                         </div>
                                     </div>
                                 </div>
@@ -229,13 +221,13 @@
                                 <div class="col-md-12" style="margin-top: 15px;">
                                     <div class="row">
                                         <div class="form-group col-6 col-md-3">
-                                            <input type="number" class="form-control" placeholder="DDD do Contato">
+                                            <input type="text" class="form-control" placeholder="DDD do Contato">
                                         </div>
                                         <div class="form-group col-6 col-md-3">
-                                            <input type="tel" class="form-control" placeholder="Telefone do Contato">
+                                            <input type="text" class="form-control" placeholder="Telefone do Contato">
                                         </div>
                                         <div class="form-group col-6 col-md-3">
-                                            <input type="tel" class="form-control" placeholder="Ramal do Contato">
+                                            <input type="text" class="form-control" placeholder="Ramal do Contato">
                                         </div>
                                     </div>
                                 </div>
@@ -274,7 +266,7 @@
                                         <input type="text" name="QUANTIDADE_TOTAL_VEICULOS" id="D17" maxlength="6" class="form-control" placeholder="Quantidade Total Veiculos">
                                     </div>
                                     <div class="col-md-4">
-                                        <input type="number" class="form-control" placeholder="Valor de Recarga">
+                                        <input type="text" class="form-control" placeholder="Valor de Recarga">
                                     </div>
                                     <div class="col-4 col-md-4">
                                         <select class="custom-select" id="inputGroupSelect04">
@@ -295,7 +287,7 @@
 
                                 <div class="row">
                                     <div class="col-6 col-md-6">
-                                        <input type="number" class="form-control" placeholder="Limite Veloe">
+                                        <input type="text" class="form-control" name="LIMITE_CREDITO" maxlength="13" placeholder="Limite Veloe">
                                     </div>
                                     <div class="col-6 col-md-6 ml-auto">
                                         <select class="custom-select" id="inputGroupSelect04">
@@ -310,19 +302,19 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-6 col-md-2" style="margin-top: 15px;margin-bottom: 15px;">
-                                        <input type="number" class="form-control" placeholder="Banco">
+                                        <input type="text" class="form-control" placeholder="Banco">
                                     </div>
                                     <div class="col-6 col-md-2" style="margin-top: 15px;margin-bottom: 15px;">
-                                        <input type="number" class="form-control" placeholder="Agência">
+                                        <input type="text" class="form-control" placeholder="Agência">
                                     </div>
                                     <div class="col-6 col-md-2" style="margin-top: 15px;margin-bottom: 15px;">
-                                        <input type="number" class="form-control" placeholder="Dígito">
+                                        <input type="text" class="form-control" placeholder="Dígito">
                                     </div>
                                     <div class="col-6 col-md-3" style="margin-top: 15px;margin-bottom: 15px;">
-                                        <input type="number" class="form-control" placeholder="Conta">
+                                        <input type="text" class="form-control" placeholder="Conta">
                                     </div>
                                     <div class="col-6 col-md-2" style="margin-top: 15px;margin-bottom: 15px;">
-                                        <input type="number" class="form-control" placeholder="Dígito">
+                                        <input type="text" class="form-control" placeholder="Dígito">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -371,7 +363,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">R$</span>
                                                 </div>
-                                                <input type="number" class="form-control"
+                                                <input type="text" class="form-control"
                                                     placeholder="Tarifa Mensal Preço de Lista">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">0,00</span>
@@ -383,7 +375,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">R$</span>
                                                 </div>
-                                                <input type="number" class="form-control"
+                                                <input type="text" class="form-control"
                                                     placeholder="Tarifa Mensal Bonificada">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">0,00</span>
@@ -397,7 +389,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">R$</span>
                                                 </div>
-                                                <input type="number" class="form-control" placeholder="Adesão">
+                                                <input type="text" class="form-control" placeholder="Adesão">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">0,00</span>
                                                 </div>
@@ -408,7 +400,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">R$</span>
                                                 </div>
-                                                <input type="number" class="form-control" placeholder="Entrega">
+                                                <input type="text" class="form-control" placeholder="Entrega">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">0,00</span>
                                                 </div>
@@ -421,7 +413,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">R$</span>
                                                 </div>
-                                                <input type="number" class="form-control"
+                                                <input type="text" class="form-control"
                                                     placeholder="Substituição da VeloeTag">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">0,00</span>
@@ -429,7 +421,7 @@
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <input type="number" class="form-control"
+                                            <input type="text" class="form-control"
                                                 placeholder="Quantidade de Meses Isenção">
                                         </div>
                                     </div>
@@ -440,7 +432,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">R$</span>
                                                 </div>
-                                                <input type="number" class="form-control"
+                                                <input type="text" class="form-control"
                                                     placeholder="Tarifa de Inativação">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">0,00</span>
@@ -453,7 +445,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">R$</span>
                                                 </div>
-                                                <input type="number" class="form-control"
+                                                <input type="text" class="form-control"
                                                     placeholder="Tarifa de Devolução de Saldo">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">0,00</span>
@@ -468,7 +460,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">R$</span>
                                                 </div>
-                                                <input type="number" class="form-control"
+                                                <input type="text" class="form-control"
                                                     placeholder="Emissão de Extrato">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">0,00</span>
@@ -481,7 +473,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">R$</span>
                                                 </div>
-                                                <input type="number" class="form-control"
+                                                <input type="text" class="form-control"
                                                     placeholder="Tarifa de Emissão Emergencial">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">0,00</span>
@@ -495,14 +487,14 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">R$</span>
                                                 </div>
-                                                <input type="number" class="form-control" placeholder="Rescisão">
+                                                <input type="text" class="form-control" placeholder="Rescisão">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">0,00</span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
-                                            <input type="number" class="form-control" placeholder="Cód Promocional">
+                                            <input type="text" class="form-control" placeholder="Cód Promocional">
                                         </div>
                                     </div>
                                 </div>
@@ -525,24 +517,24 @@
                             <div class="card col-md-12" style="padding: 15px;">
                                 <div class="row" style="margin-top: 15px">
                                     <div class="col-6 col-md-4">
-                                        <input type="number" class="form-control" placeholder="Banco">
+                                        <input type="text" class="form-control" placeholder="Banco">
                                     </div>
                                     <div class="col-6 col-md-4">
-                                        <input type="number" class="form-control" placeholder="Agência">
+                                        <input type="text" class="form-control" placeholder="Agência">
                                     </div>
                                     <div class="col-6 col-md-2">
-                                        <input type="number" class="form-control" placeholder="Dígito">
+                                        <input type="text" class="form-control" placeholder="Dígito">
                                     </div>
                                 </div>
                                 <div class="row" style="margin-top: 15px">
                                     <div class="col-6 col-md-4">
-                                        <input type="number" class="form-control" placeholder="DDD">
+                                        <input type="text" class="form-control" placeholder="DDD">
                                     </div>
                                     <div class="col-6 col-md-4">
-                                        <input type="number" class="form-control" placeholder="Telefone">
+                                        <input type="text" class="form-control" placeholder="Telefone">
                                     </div>
                                     <div class="col-6 col-md-2">
-                                        <input type="number" class="form-control" placeholder="Ramal">
+                                        <input type="text" class="form-control" placeholder="Ramal">
                                     </div>
                                 </div>
                                 <div class="row">
@@ -552,7 +544,7 @@
                                 </div>
                                 <div class="row" style="margin-top: 15px">
                                     <div class="col-4 col-md-4">
-                                        <input type="number" class="form-control" placeholder="Código do Vendedor">
+                                        <input type="text" class="form-control" placeholder="Código do Vendedor">
                                     </div>
                                     <div class="col-4 col-md-4">
                                         <select class="custom-select" id="inputGroupSelect04">

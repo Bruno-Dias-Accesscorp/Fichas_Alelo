@@ -1,5 +1,6 @@
 const { time } = require("console");
-const fs = require("fs")
+const fs = require("fs");
+const campos_veloe = require("../JSON/campos_veloe");
 const veloe_campos = require("../JSON/campos_veloe");
 const zeros = "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
 const espacos = "                                                                                                                                                                                                                                                                                                             "
@@ -68,10 +69,7 @@ module.exports = {
         let gerarLinha_1 = id_001 + id_002 + id_003 + id_004 + "\r\n"
 
         let id_005 = veloe_campos[2].valor
-        // let id_006_1 = campos.CNPJ.replace(/[^\d]+/g,'')
-        // let cnpjMatriz = id_006_1.substr(0,8) 
-        // let cnpjFilial = id_006_1.substr(8,4)
-        // let cnpjDigito = id_006_1.substr(12,2)
+
         let id_006 = campos.CNPJ.replace(/[^\d]+/g, '')
 
         let id_008 = campos.RAZAO_SOCIAL
@@ -205,7 +203,128 @@ module.exports = {
 
         let gerarLinha_2 = id_005 + id_006 + id_007 + id_008 + id_009 + id_010 + id_011 + id_012 + id_013 + id_014 + id_015 + id_016 + id_017 + "\r\n"
 
-        fs.writeFile('Veloe\\TERADE_' + id_002 + "_" + id_003 + ".txt", gerarLinha_1 + gerarLinha_2, (err) => {
+        let id_018 = veloe_campos[5].valor
+
+        let id_019 = campos.NOME_LOGRADOURO
+
+        let calcLogradouro = id_019.length
+        let valLogradouro = 50 - calcLogradouro
+
+        if (id_019.length < 50) {
+            id_019 = id_019 + espacos.substring(0, valLogradouro)
+        }
+
+        let id_020 = campos.NUMERO_LOGRADOURO
+
+        if (id_020 == "") { id_020 = zeros.substring(0, 5) } else {
+            if (id_020 < 10) { id_020 = zeros.substring(0, 4) + id_020 } else {
+                if (id_020 < 100) { id_020 = zeros.substring(0, 3) + id_020 } else {
+                    if (id_020 < 1000) { id_020 = zeros.substring(0, 2) + id_020 } else {
+                        if (id_020 < 10000) { id_020 = zeros.substring(0, 1) + id_020 }}}}}
+        
+        let id_021 = campos.COMPLEMENTO_LOGRADOURO
+        
+        let calcComplemento = id_021.length
+        let valComplemento = 25 - calcComplemento
+
+        if (id_021.length < 25) {
+            id_021 = id_021 + espacos.substring(0, valComplemento)
+        }
+
+        let id_022 = campos.BAIRRO_LOGRADOURO
+        
+        let calcBairro = id_022.length
+        let valBairro = 30 - calcBairro
+
+        if (id_022.length < 30) {
+            id_022 = id_022 + espacos.substring(0, valBairro)
+        }
+
+        let id_023 = campos.MUNICIPIO_LOGRADOURO
+        
+        let calcMunicipio = id_023.length
+        let valMunicipio = 28 - calcMunicipio
+
+        if (id_023.length < 28) {
+            id_023 = id_023 + espacos.substring(0, valMunicipio)
+        }
+
+        let id_024 = campos.UF
+
+        if (id_024 == "UF...") {
+            id_024 = espacos.substring(0, 2)
+        }
+
+        let id_025 = campos.CEP
+
+        if (id_025 == "") { id_025 = zeros.substring(0, 8) } else {
+            if (id_025 < 10) { id_025 = zeros.substring(0, 7) + id_025 } else {
+                if (id_025 < 100) { id_025 = zeros.substring(0, 6) + id_025 } else {
+                    if (id_025 < 1000) { id_025 = zeros.substring(0, 5) + id_025 } else {
+                        if (id_025 < 10000) { id_025 = zeros.substring(0, 4) + id_025 } else {
+                            if (id_025 < 100000) { id_025 = zeros.substring(0, 3) + id_025 } else {
+                                if (id_025 < 1000000) { id_025 = zeros.substring(0, 2) + id_025 } else {
+                                    if (id_025 < 10000000) { id_025 = zeros.substring(0, 1) + id_025 }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        let id_026 = campos.DDD_PRINCIPAL
+
+        if (id_026 == "") { id_026 = zeros.substring(0, 5) } else {
+            if (id_026 < 10) { id_026 = zeros.substring(0, 4) + id_026 } else {
+                if (id_026 < 100) { id_026 = zeros.substring(0, 3) + id_026 } else {
+                    if (id_026 < 1000) { id_026 = zeros.substring(0, 2) + id_026 } else {
+                        if (id_026 < 10000) { id_026 = zeros.substring(0, 1) + id_026 }}}}}
+
+        let id_027 = campos.TELEFONE_PRINCIPAL
+
+        let calcTelefone = id_027.length
+        let valTelefone = 12 - calcTelefone
+
+        if (id_027.length < 12) {
+            id_027 = id_027 + espacos.substring(0, valTelefone)
+        }
+
+        let id_028 = veloe_campos[6].valor
+
+        let id_029 = campos.LIMITE_CREDITO
+
+        if (id_029 == "") { id_029 = zeros.substring(0, 13) } else {
+            if (id_029 < 100000000) { id_029 = zeros.substring(0, 12) + id_029 } else {
+                if (id_029 < 1000000000) { id_029 = zeros.substring(0, 11) + id_029 } else {
+                    if (id_029 < 10000000000) { id_029 = zeros.substring(0, 10) + id_029 } else {
+                        if (id_029 < 100000000000) { id_029 = zeros.substring(0, 9) + id_029 } else {
+                            if (id_029 < 1000000000000) { id_029 = zeros.substring(0, 8) + id_029 } else {
+                                if (id_029 < 10000000000000) { id_029 = zeros.substring(0, 7) + id_029 } else {
+                                    if (id_029 < 100000000000000) { id_029 = zeros.substring(0, 6) + id_029 } else {
+                                        if (id_029 < 1000000000000000) { id_029 = zeros.substring(0, 5) + id_029 } else {
+                                            if (id_029 < 10000000000000000n) { id_029 = zeros.substring(0, 4) + id_029 } else {
+                                                if (id_029 < 100000000000000000n) { id_029 = zeros.substring(0, 3) + id_029 } else {
+                                                    if (id_029 < 1000000000000000000n) { id_029 = zeros.substring(0, 2) + id_029 } else {
+                                                        if (id_029 < 10000000000000000000n) { id_029 = zeros.substring(0, 1) + id_029 }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+
+
+        let gerarLinha_3 = id_018 + id_019 + id_020 + id_021 + id_022 + id_023 + id_024 + id_025 + id_026 + id_027 + id_028 + id_029
+
+        fs.writeFile('Veloe\\TERADE_' + id_002 + "_" + id_003 + ".txt", gerarLinha_1 + gerarLinha_2 + gerarLinha_3, (err) => {
             if (err) throw err;
             console.log("O arquivo foi criado!");
         })
