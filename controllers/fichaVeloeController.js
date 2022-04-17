@@ -16,25 +16,25 @@ module.exports = {
         let id_001 = veloe_campos[0].valor
 
 
-        var data = new Date()
-        var dia
-        var mes
-        var ano = data.getFullYear()
+        let data = new Date()
+        let dia
+        let mes
+        let ano = data.getFullYear()
 
         if (data.getDate() < 10) {
-            var diaTexto = data.getDate()
+            let diaTexto = data.getDate()
             dia = "0" + diaTexto.toString()
         } else {
-            var diaTexto = data.getDate()
+            let diaTexto = data.getDate()
             dia = diaTexto.toString()
         }
 
         if (data.getMonth() <= 10) {
-            var mesTexto = data.getMonth()
+            let mesTexto = data.getMonth()
             mesTexto = mesTexto += 1
             mes = "0" + mesTexto.toString()
         } else {
-            var mesTexto = data.getMonth()
+            let mesTexto = data.getMonth()
             mes = mesTexto.toString()
         }
 
@@ -94,7 +94,7 @@ module.exports = {
 
         let id_009 = campos.TIPO_EMPRESA
 
-        if (id_009 == " ") {
+        if (id_009 == "") {
             id_009 = "000"
         } else {
             if (id_009 < 10) {
@@ -216,11 +216,11 @@ module.exports = {
 
         let id_020 = campos.NUMERO_LOGRADOURO
 
-        if (id_020 == "") { id_020 = zeros.substring(0, 5) } else {
-            if (id_020 < 10) { id_020 = zeros.substring(0, 4) + id_020 } else {
-                if (id_020 < 100) { id_020 = zeros.substring(0, 3) + id_020 } else {
-                    if (id_020 < 1000) { id_020 = zeros.substring(0, 2) + id_020 } else {
-                        if (id_020 < 10000) { id_020 = zeros.substring(0, 1) + id_020 }}}}}
+        if (id_020 == "") { id_020 = espacos.substring(0, 5) } else {
+            if (id_020 < 10) { id_020 = espacos.substring(0, 4) + id_020 } else {
+                if (id_020 < 100) { id_020 = espacos.substring(0, 3) + id_020 } else {
+                    if (id_020 < 1000) { id_020 = espacos.substring(0, 2) + id_020 } else {
+                        if (id_020 < 10000) { id_020 = espacos.substring(0, 1) + id_020 }}}}}
         
         let id_021 = campos.COMPLEMENTO_LOGRADOURO
         
@@ -251,7 +251,7 @@ module.exports = {
 
         let id_024 = campos.UF
 
-        if (id_024 == "UF...") {
+        if (id_024 == "") {
             id_024 = espacos.substring(0, 2)
         }
 
@@ -320,11 +320,48 @@ module.exports = {
             }
         }
 
+        let id_030 = campos.DATA_INICIO_VALIDADE
 
-    
+        let diaInicioValidade
+        let mesInicioValidade
+        let anoInicioValidade
+
+        if(id_030 == ""){
+            id_030 = zeros.substring(0, 8)
+        }else{
+            let data = id_030.replace("-", '')
+            let data_2 = data.replace("-", '')
+            diaInicioValidade = data_2.substring(6, 8)
+            mesInicioValidade = data_2.substring(4, 6)
+            anoInicioValidade = data_2.substring(0, 4)
+            id_030 = diaInicioValidade + mesInicioValidade + anoInicioValidade
+        }
 
 
-        let gerarLinha_3 = id_018 + id_019 + id_020 + id_021 + id_022 + id_023 + id_024 + id_025 + id_026 + id_027 + id_028 + id_029
+        let id_031 = campos.DATA_FIM_VALIDADE
+
+        let diaFimValidade
+        let mesFimValidade
+        let anoFimValidade
+
+        if(id_031 == ""){
+            id_031 = zeros.substring(0, 8)
+        }else{
+            let data = id_031.replace("-", '')
+            let data_2 = data.replace("-", '')
+            diaFimValidade = data_2.substring(6, 8)
+            mesFimValidade = data_2.substring(4, 6)
+            anoFimValidade = data_2.substring(0, 4)
+            id_031 = diaFimValidade + mesFimValidade + anoFimValidade
+        }
+
+        let id_032 = veloe_campos[7].valor
+
+        
+
+        let gerarLinha_3 = id_018 + id_019 + id_020 + id_021 + id_022 + id_023 + id_024 + id_025 + id_026 + id_027 + id_028 + id_029 + id_030 + id_031 + id_032 + "\r\n"
+
+        console.log(gerarLinha_3.length)
 
         fs.writeFile('Veloe\\TERADE_' + id_002 + "_" + id_003 + ".txt", gerarLinha_1 + gerarLinha_2 + gerarLinha_3, (err) => {
             if (err) throw err;
