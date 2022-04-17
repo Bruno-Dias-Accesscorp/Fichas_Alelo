@@ -10,7 +10,7 @@ module.exports = [{"id":1,"valor":"H01"},{"id":2,"valor":"CONTRATOS E CONTRATANT
 {"id":11,"valor":"00000000000S"},
 {"id":12,"valor":"S00000000000"},
 {"id":13,"valor":"0"},
-{"id":14,"valor":"                            000005D32      "},
+{"id":14,"valor":"                                                                                                                   "},
 {"id":15,"valor":"                               0000060"},
 {"id":16,"valor":"D41000000000000000000223"},
 {"id":17,"valor":"000000000000010237"},

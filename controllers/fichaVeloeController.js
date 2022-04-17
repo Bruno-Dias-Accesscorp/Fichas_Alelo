@@ -217,10 +217,10 @@ module.exports = {
         let id_020 = campos.NUMERO_LOGRADOURO
 
         if (id_020 == "") { id_020 = espacos.substring(0, 5) } else {
-            if (id_020 < 10) { id_020 = espacos.substring(0, 4) + id_020 } else {
-                if (id_020 < 100) { id_020 = espacos.substring(0, 3) + id_020 } else {
-                    if (id_020 < 1000) { id_020 = espacos.substring(0, 2) + id_020 } else {
-                        if (id_020 < 10000) { id_020 = espacos.substring(0, 1) + id_020 }}}}}
+            if (id_020 < 10) { id_020 = id_020 + espacos.substring(0, 4) } else {
+                if (id_020 < 100) { id_020 = id_020 + espacos.substring(0, 3) } else {
+                    if (id_020 < 1000) { id_020 = id_020 + espacos.substring(0, 2) } else {
+                        if (id_020 < 10000) { id_020 = id_020 + espacos.substring(0, 1) + id_020 }}}}}
         
         let id_021 = campos.COMPLEMENTO_LOGRADOURO
         
@@ -361,9 +361,134 @@ module.exports = {
 
         let gerarLinha_3 = id_018 + id_019 + id_020 + id_021 + id_022 + id_023 + id_024 + id_025 + id_026 + id_027 + id_028 + id_029 + id_030 + id_031 + id_032 + "\r\n"
 
+        let gerarLinha_4 = veloe_campos[8].valor + "\r\n"
+
+        let id_033 = veloe_campos[9].valor
+
+        let id_034 = id_006
+
+        let id_035 = campos.NOME_REPRESENTANTE
+
+        let calcNome_Representante = id_008.length
+        let valNome_Representante = 35 - calcNome_Representante
+
+        if (id_035.length < 35) {
+            id_035 = id_035 + espacos.substring(0, valNome_Representante)
+        }
+
+        let id_036 = campos.CPF_REPRESENTANTE.replace(/[^\d]+/g, '')
+
+        let id_037 = veloe_campos[10].valor
+
+        let id_038 = campos.DATA_VINCULO_EMPRESA
+
+        let diaVinculoEmpresa
+        let mesVinculoEmpresa
+        let anoVinculoEmpresa
+
+        if(id_038 == ""){
+            id_038 = zeros.substring(0, 8)
+        }else{
+            let data = id_038.replace("-", '')
+            let data_2 = data.replace("-", '')
+            diaVinculoEmpresa = data_2.substring(6, 8)
+            mesVinculoEmpresa = data_2.substring(4, 6)
+            anoVinculoEmpresa = data_2.substring(0, 4)
+            id_038 = diaVinculoEmpresa + mesVinculoEmpresa + anoVinculoEmpresa
+        }
+
+        let id_039 = campos.RELACAO_REPRESENTANTE_LEGAL
+
+        if(id_039 == ""){
+            id_039 = 0
+        }
+
+        let id_040 = veloe_campos[11].valor
+
+        let id_041 = id_038
+
+        let id_042 = veloe_campos[12].valor
+
+        let id_043 = campos.TELEFONE_CONTATO
+
+        if (id_043 == "") { id_043 = espacos.substring(0, 12) } else {
+            if (id_043 < 10) { id_043 = id_043 + espacos.substring(0, 11) } else {
+                if (id_043 < 100) { id_043 = id_043 + espacos.substring(0, 10) } else {
+                    if (id_043 < 1000) { id_043 = id_043 + espacos.substring(0, 9) } else {
+                        if (id_043 < 10) { id_043 = id_043 + espacos.substring(0, 8) } else {
+                            if (id_043 < 100) { id_043 = id_043 + espacos.substring(0, 7) } else {
+                                if (id_043 < 1000) { id_043 = id_043 + espacos.substring(0, 6) } else {
+                                    if (id_043 < 1000) { id_043 = id_043 + espacos.substring(0, 5) } else {
+                                        if (id_043 < 10) { id_043 = id_043 + espacos.substring(0, 4) } else {
+                                            if (id_043 < 100) { id_043 = id_043 + espacos.substring(0, 3) } else {
+                                                if (id_043 < 1000) { id_043 = id_043 + espacos.substring(0, 2) } else {
+                                                    if (id_043 < 10000) { id_043 = id_043 + espacos.substring(0, 1) + id_043 }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        let id_044 = veloe_campos[13].valor
+
+        let id_045 = campos.DDD_PRINCIPAL
+
+        if (id_045 == "") { id_045 = zeros.substring(0, 5) } else {
+            if (id_045 < 10) { id_045 = zeros.substring(0, 4) + id_045 } else {
+                if (id_045 < 100) { id_045 = zeros.substring(0, 3) + id_045 } else {
+                    if (id_045 < 1000) { id_045 = zeros.substring(0, 2) + id_045 } else {
+                        if (id_045 < 10000) { id_045 = zeros.substring(0, 1) + id_045 }}}}}
+
+        let id_046 = campos.TELEFONE_PRINCIPAL
+
+        if (id_046 == "") { id_046 = espacos.substring(0, 12) } else {
+            if (id_046 < 10) { id_046 = id_046 + espacos.substring(0, 11) } else {
+                if (id_046 < 100) { id_046 = id_046 + espacos.substring(0, 10) } else {
+                    if (id_046 < 1000) { id_046 = id_046 + espacos.substring(0, 9) } else {
+                        if (id_046 < 10) { id_046 = id_046 + espacos.substring(0, 8) } else {
+                            if (id_046 < 100) { id_046 = id_046 + espacos.substring(0, 7) } else {
+                                if (id_046 < 1000) { id_046 = id_046 + espacos.substring(0, 6) } else {
+                                    if (id_046 < 1000) { id_046 = id_046 + espacos.substring(0, 5) } else {
+                                        if (id_046 < 10) { id_046 = id_046 + espacos.substring(0, 4) } else {
+                                            if (id_046 < 100) { id_046 = id_046 + espacos.substring(0, 3) } else {
+                                                if (id_046 < 1000) { id_046 = id_046 + espacos.substring(0, 2) } else {
+                                                    if (id_046 < 10000) { id_046 = id_046 + espacos.substring(0, 1) }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+
+        let id_047 = campos.RAMAL_PRINCIPAL
+
+        if (id_047 == "") { id_047 = espacos.substring(0, 6) } else {
+            if (id_047 < 10) { id_047 = id_047 +  espacos.substring(0, 5) } else {
+                if (id_047 < 10) { id_047 = id_047 +  espacos.substring(0, 4) } else {
+                if (id_047 < 100) { id_047 = id_047 + espacos.substring(0, 3) } else {
+                    if (id_047 < 1000) { id_047 = id_047 + espacos.substring(0, 2) } else {
+                        if (id_047 < 10000) { id_047 = id_047 + espacos.substring(0, 1) } else {
+                            if (id_047 < 10000) { id_047 = id_047 + espacos.substring(0, 1) }}}}}}}
+
+        let gerarLinha_5 = id_033 + id_034 + id_035 + id_036 + id_037 + id_038 + id_039 + id_040 + id_041 + id_042 + id_043 + id_044 + id_045 + id_046
+
+
         console.log(gerarLinha_3.length)
 
-        fs.writeFile('Veloe\\TERADE_' + id_002 + "_" + id_003 + ".txt", gerarLinha_1 + gerarLinha_2 + gerarLinha_3, (err) => {
+        fs.writeFile('Veloe\\TERADE_' + id_002 + "_" + id_003 + ".txt", gerarLinha_1 + gerarLinha_2 + gerarLinha_3 + gerarLinha_4, (err) => {
             if (err) throw err;
             console.log("O arquivo foi criado!");
         })
