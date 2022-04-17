@@ -94,7 +94,7 @@ module.exports = {
 
         let id_009 = campos.TIPO_EMPRESA
 
-        if (id_009 == "Tipo de Empresa...") {
+        if (id_009 == " ") {
             id_009 = "000"
         } else {
             if (id_009 < 10) {
@@ -320,7 +320,7 @@ module.exports = {
             }
         }
 
-        
+
     
 
 
