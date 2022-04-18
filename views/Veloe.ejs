@@ -289,11 +289,11 @@
                                     </div>
                                     <div class="col-md-4">
                                         <label for="name">Valor de Recarga</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" name="VALOR_RECARGA" id="D43" maxlength="10" class="form-control">
                                     </div>
                                     <div class="col-4 col-md-4">
-                                        <label for="name">Forma de Pagamento</label>
-                                        <select class="custom-select" id="inputGroupSelect04">
+                                        <label for="name">Meio de Pagamento</label>
+                                        <select class="custom-select" name="MEIO_PAGAMENTO_PRE" id="inputGroupSelect04">
                                             <option selected></option>
                                             <option value="1">Crédito em Conta</option>
                                             <option value="2">Débito em Conta</option>
@@ -316,7 +316,7 @@
                                     </div>
                                     <div class="col-6 col-md-6 ml-auto">
                                         <label for="name">Meio de Pagamento</label>
-                                        <select class="custom-select" id="inputGroupSelect04">
+                                        <select class="custom-select" name="MEIO_PAGAMENTO_POS" id="inputGroupSelect04">
                                             <option selected> </option>
                                             <option value="1">Crédito em Conta</option>
                                             <option value="2">Débito em Conta</option>
@@ -333,11 +333,11 @@
                                     </div>
                                     <div class="col-6 col-md-2" style="margin-top: 15px;margin-bottom: 15px;">
                                         <label for="name">Agência</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" name="AGENCIA_DEBITO_CONTA" maxlength="5" id="D44" class="form-control">
                                     </div>
                                     <div class="col-6 col-md-2" style="margin-top: 15px;margin-bottom: 15px;">
                                         <label for="name">Dígito Agência</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" name="DIGITO_AGENCIA_DEBITO_CONTA" maxlength="1" id="D45" class="form-control">
                                     </div>
                                     <div class="col-6 col-md-3" style="margin-top: 15px;margin-bottom: 15px;">
                                         <label for="name">Conta</label>
@@ -531,7 +531,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             <label for="name">Cód Promocional</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" name="CODIGO_AUTORIZACAO" maxlength="10" id="D46" class="form-control">
                                         </div>
                                     </div>
                                 </div>
@@ -559,41 +559,41 @@
                                     </div>
                                     <div class="col-6 col-md-4">
                                         <label for="name">Agência</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" name="AGENCIA_VENDEU" id="D36" maxlength="5" class="form-control">
                                     </div>
                                     <div class="col-6 col-md-2">
                                         <label for="name">Dígito</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" name="DIGITO_AGENCIA_VENDEU" id="D37" maxlength="1" class="form-control">
                                     </div>
                                 </div>
                                 <div class="row" style="margin-top: 15px">
                                     <div class="col-6 col-md-4">
                                         <label for="name">DDD</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" name="DDD_VENDEDOR" id="D40" maxlength="5" class="form-control">
                                     </div>
                                     <div class="col-6 col-md-4">
                                         <label for="name">Telefone</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" name="TELEFONE_VENDEDOR" id="D41" maxlength="12" class="form-control">
                                     </div>
                                     <div class="col-6 col-md-2">
                                         <label for="name">Ramal</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" name="RAMAL_VENDEDOR" id="D42" maxlength="6" class="form-control">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-8" style="margin-top: 15px">
                                         <label for="name">Nome do Vendedor</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" name="NOME_VENDEDOR" id="D39" maxlength="40" class="form-control">
                                     </div>
                                 </div>
                                 <div class="row" style="margin-top: 15px">
                                     <div class="col-4 col-md-4">
                                         <label for="name">Código do Vendedor</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" name="CODIGO_VENDEDOR" id="D38" maxlength="20" class="form-control">
                                     </div>
                                     <div class="col-4 col-md-4">
                                         <label for="name">É um CPF o Código?</label>
-                                        <select class="custom-select" id="inputGroupSelect04">
+                                        <select class="custom-select" name="CODIGO_CPF" id="inputGroupSelect04">
                                             <option selected> </option>
                                             <option value="S">S</option>
                                             <option value="N">N</option>
@@ -601,7 +601,7 @@
                                     </div>
                                     <div class="col-4 col-md-4">
                                         <label for="name">Data de Assinatura do Contrato</label>
-                                        <input type="date" class="form-control">
+                                        <input type="date" name="DATA_CONTRATO" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -962,6 +962,209 @@
 
         
         document.getElementById('D35').addEventListener('keyup', (ev) => {
+            const input = ev.target;
+            input.addEventListener("keypress", function (e) {
+                if (!checkChar(e)) {
+                    e.preventDefault();
+                }
+            });
+            function checkChar(e) {
+                var char = String.fromCharCode(e.keyCode);
+
+                console.log(char);
+                var pattern = '[a-zA-Z0-9-" "]';
+                if (char.match(pattern)) {
+                    return true;
+                }
+            }
+            input.value = input.value.toUpperCase();
+        });
+
+        document.getElementById('D36').addEventListener('keyup', (ev) => {
+            const input2 = ev.target;
+            input2.addEventListener("keypress", function (e) {
+                if (!checkChar(e)) {
+                    e.preventDefault();
+                }
+            });
+            function checkChar(e) {
+                var char = String.fromCharCode(e.keyCode);
+
+                console.log(char);
+                var pattern = '[0-9]';
+                if (char.match(pattern)) {
+                    return true;
+                }
+            }
+        });
+
+        document.getElementById('D37').addEventListener('keyup', (ev) => {
+            const input2 = ev.target;
+            input2.addEventListener("keypress", function (e) {
+                if (!checkChar(e)) {
+                    e.preventDefault();
+                }
+            });
+            function checkChar(e) {
+                var char = String.fromCharCode(e.keyCode);
+
+                console.log(char);
+                var pattern = '[0-9]';
+                if (char.match(pattern)) {
+                    return true;
+                }
+            }
+        });
+
+        document.getElementById('D38').addEventListener('keyup', (ev) => {
+            const input = ev.target;
+            input.addEventListener("keypress", function (e) {
+                if (!checkChar(e)) {
+                    e.preventDefault();
+                }
+            });
+            function checkChar(e) {
+                var char = String.fromCharCode(e.keyCode);
+
+                console.log(char);
+                var pattern = '[a-zA-Z0-9-" "]';
+                if (char.match(pattern)) {
+                    return true;
+                }
+            }
+            input.value = input.value.toUpperCase();
+        });
+
+        document.getElementById('D39').addEventListener('keyup', (ev) => {
+            const input = ev.target;
+            input.addEventListener("keypress", function (e) {
+                if (!checkChar(e)) {
+                    e.preventDefault();
+                }
+            });
+            function checkChar(e) {
+                var char = String.fromCharCode(e.keyCode);
+
+                console.log(char);
+                var pattern = '[a-zA-Z0-9-" "]';
+                if (char.match(pattern)) {
+                    return true;
+                }
+            }
+            input.value = input.value.toUpperCase();
+        });
+
+        document.getElementById('D40').addEventListener('keyup', (ev) => {
+            const input2 = ev.target;
+            input2.addEventListener("keypress", function (e) {
+                if (!checkChar(e)) {
+                    e.preventDefault();
+                }
+            });
+            function checkChar(e) {
+                var char = String.fromCharCode(e.keyCode);
+
+                console.log(char);
+                var pattern = '[0-9]';
+                if (char.match(pattern)) {
+                    return true;
+                }
+            }
+        });
+
+        document.getElementById('D41').addEventListener('keyup', (ev) => {
+            const input = ev.target;
+            input.addEventListener("keypress", function (e) {
+                if (!checkChar(e)) {
+                    e.preventDefault();
+                }
+            });
+            function checkChar(e) {
+                var char = String.fromCharCode(e.keyCode);
+
+                console.log(char);
+                var pattern = '[a-zA-Z0-9-" "]';
+                if (char.match(pattern)) {
+                    return true;
+                }
+            }
+            input.value = input.value.toUpperCase();
+        });
+
+        document.getElementById('D42').addEventListener('keyup', (ev) => {
+            const input = ev.target;
+            input.addEventListener("keypress", function (e) {
+                if (!checkChar(e)) {
+                    e.preventDefault();
+                }
+            });
+            function checkChar(e) {
+                var char = String.fromCharCode(e.keyCode);
+
+                console.log(char);
+                var pattern = '[a-zA-Z0-9-" "]';
+                if (char.match(pattern)) {
+                    return true;
+                }
+            }
+            input.value = input.value.toUpperCase();
+        });
+
+        document.getElementById('D43').addEventListener('keyup', (ev) => {
+            const input2 = ev.target;
+            input2.addEventListener("keypress", function (e) {
+                if (!checkChar(e)) {
+                    e.preventDefault();
+                }
+            });
+            function checkChar(e) {
+                var char = String.fromCharCode(e.keyCode);
+
+                console.log(char);
+                var pattern = '[0-9]';
+                if (char.match(pattern)) {
+                    return true;
+                }
+            }
+        });
+
+        document.getElementById('D44').addEventListener('keyup', (ev) => {
+            const input2 = ev.target;
+            input2.addEventListener("keypress", function (e) {
+                if (!checkChar(e)) {
+                    e.preventDefault();
+                }
+            });
+            function checkChar(e) {
+                var char = String.fromCharCode(e.keyCode);
+
+                console.log(char);
+                var pattern = '[0-9]';
+                if (char.match(pattern)) {
+                    return true;
+                }
+            }
+        });
+
+        document.getElementById('D45').addEventListener('keyup', (ev) => {
+            const input2 = ev.target;
+            input2.addEventListener("keypress", function (e) {
+                if (!checkChar(e)) {
+                    e.preventDefault();
+                }
+            });
+            function checkChar(e) {
+                var char = String.fromCharCode(e.keyCode);
+
+                console.log(char);
+                var pattern = '[0-9]';
+                if (char.match(pattern)) {
+                    return true;
+                }
+            }
+        });
+
+        document.getElementById('D46').addEventListener('keyup', (ev) => {
             const input = ev.target;
             input.addEventListener("keypress", function (e) {
                 if (!checkChar(e)) {
