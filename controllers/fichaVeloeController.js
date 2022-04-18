@@ -515,8 +515,6 @@ module.exports = {
 
         let id_058 = campos.EMAIL_CONTATO
 
-        console.log(id_058)
-
         if (id_058 == undefined) {
             id_058 = espacos.substring(0, 40)
         } else {
@@ -742,8 +740,57 @@ module.exports = {
 
         let gerarLinha_8 = id_083 + id_084 + id_085 + "\r\n"
 
+        let id_086 = veloe_campos[28].valor 
 
-        fs.writeFile('Veloe\\TERADE_' + id_002 + "_" + id_003 + ".txt", gerarLinha_1 + gerarLinha_2 + gerarLinha_3 + gerarLinha_4 + gerarLinha_5 + gerarLinha_6 + gerarLinha_7 + gerarLinha_8, (err) => {
+        let id_087 = id_006
+
+        let id_088 = veloe_campos[29].valor
+
+        let id_089 = id_030
+
+        let id_090 = id_031
+
+        let id_091 = campos.TARIFA_ENTREGA.replace(/[^\d]+/g, '')
+
+        if (id_091 == "") { id_091 = zeros.substring(0, 11) } else {
+            if (id_091 < 10) { id_091 = zeros.substring(0, 10) + id_091 } else {
+                if (id_091 < 100) { id_091 = zeros.substring(0, 9) + id_091 } else {
+                    if (id_091 < 1000) { id_091 = zeros.substring(0, 8) + id_091 } else {
+                        if (id_091 < 10000) { id_091 = zeros.substring(0, 7) + id_091 } else {
+                            if (id_091 < 100000) { id_091 = zeros.substring(0, 6) + id_091 } else {
+                                if (id_091 < 1000000) { id_091 = zeros.substring(0, 5) + id_091 } else {
+                                    if (id_091 < 10000000) { id_091 = zeros.substring(0, 4) + id_091 } else {
+                                        if (id_091 < 100000000) { id_091 = zeros.substring(0, 3) + id_091 } else {
+                                            if (id_091 < 1000000000) { id_091 = zeros.substring(0, 2) + id_091 } else {
+                                                if (id_091 < 10000000000) { id_091 = zeros.substring(0, 1) + id_091 } else {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        let id_092 = veloe_campos[30].valor
+
+        let id_093 = campos.QUANTIDADE_MESES_ISENCAO
+
+        if (id_093 == "") { id_093 = zeros.substring(0, 2) } else {
+            if (id_093 < 10) { id_093 = zeros.substring(0, 1) + id_093 }}
+
+        let id_094 = veloe_campos[31].valor
+
+        console.log(id_094)
+
+
+        let gerarLinha_9 = id_086 + id_087 + id_088 + id_089 + id_090 + id_091 + id_092 + id_093 + id_094 + "\r\n"
+
+
+        fs.writeFile('Veloe\\TERADE_' + id_002 + "_" + id_003 + ".txt", gerarLinha_1 + gerarLinha_2 + gerarLinha_3 + gerarLinha_4 + gerarLinha_5 + gerarLinha_6 + gerarLinha_7 + gerarLinha_8 + gerarLinha_9, (err) => {
             if (err) throw err;
             console.log("O arquivo foi criado!");
         })

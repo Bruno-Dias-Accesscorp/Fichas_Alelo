@@ -435,7 +435,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">R$</span>
                                                 </div>
-                                                <input type="text" class="form-control">
+                                                <input type="text" name="TARIFA_ENTREGA" id="D47" maxlength="11" class="form-control">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">0,00</span>
                                                 </div>
@@ -457,7 +457,7 @@
                                         </div>
                                         <div class="col-md-4">
                                             <label for="name">Quantidade de Meses Isenção</label>
-                                            <input type="text" class="form-control">
+                                            <input type="text" name="QUANTIDADE_MESES_ISENCAO" id="D48" maxlength="2" class="form-control">
                                         </div>
                                     </div>
 
@@ -650,6 +650,7 @@
             }
             input.value = input.value.toUpperCase();
         });
+
         document.getElementById('D17').addEventListener('keyup', (ev) => {
             const input = ev.target;
             input.addEventListener("keypress", function (e) {
@@ -668,6 +669,7 @@
             }
             input.value = input.value.toUpperCase();
         });
+
         document.getElementById('D18').addEventListener('keyup', (ev) => {
             const input2 = ev.target;
             input2.addEventListener("keypress", function (e) {
@@ -685,6 +687,7 @@
                 }
             }
         });
+
         document.getElementById('D19').addEventListener('keyup', (ev) => {
             const input2 = ev.target;
             input2.addEventListener("keypress", function (e) {
@@ -702,6 +705,7 @@
                 }
             }
         });
+
         document.getElementById('D20').addEventListener('keyup', (ev) => {
             const input2 = ev.target;
             input2.addEventListener("keypress", function (e) {
@@ -743,6 +747,7 @@
             }
             input.value = input.value.toUpperCase();
         });
+
         document.getElementById('D23').addEventListener('keyup', (ev) => {
             const input2 = ev.target;
             input2.addEventListener("keypress", function (e) {
@@ -760,6 +765,7 @@
                 }
             }
         });
+
         document.getElementById('D24').addEventListener('keyup', (ev) => {
             const input = ev.target;
             input.addEventListener("keypress", function (e) {
@@ -778,6 +784,7 @@
             }
             input.value = input.value.toUpperCase();
         });
+
         document.getElementById('D25').addEventListener('keyup', (ev) => {
             const input = ev.target;
             input.addEventListener("keypress", function (e) {
@@ -796,6 +803,7 @@
             }
             input.value = input.value.toUpperCase();
         });
+
         document.getElementById('D26').addEventListener('keyup', (ev) => {
             const input = ev.target;
             input.addEventListener("keypress", function (e) {
@@ -814,6 +822,7 @@
             }
             input.value = input.value.toUpperCase();
         });
+
         document.getElementById('D27').addEventListener('keyup', (ev) => {
             const input2 = ev.target;
             input2.addEventListener("keypress", function (e) {
@@ -905,7 +914,6 @@
             input.value = input.value.toUpperCase();
         });
 
-
         document.getElementById('D32').addEventListener('keyup', (ev) => {
             const input2 = ev.target;
             input2.addEventListener("keypress", function (e) {
@@ -959,7 +967,6 @@
                 }
             }
         });
-
         
         document.getElementById('D35').addEventListener('keyup', (ev) => {
             const input = ev.target;
@@ -1183,6 +1190,41 @@
             input.value = input.value.toUpperCase();
         });
 
+        document.getElementById('D47').addEventListener('keyup', (ev) => {
+            const input2 = ev.target;
+            input2.addEventListener("keypress", function (e) {
+                if (!checkChar(e)) {
+                    e.preventDefault();
+                }
+            });
+            function checkChar(e) {
+                var char = String.fromCharCode(e.keyCode);
+
+                console.log(char);
+                var pattern = '[0-9-","]';
+                if (char.match(pattern)) {
+                    return true;
+                }
+            }
+        });
+
+        document.getElementById('D48').addEventListener('keyup', (ev) => {
+            const input2 = ev.target;
+            input2.addEventListener("keypress", function (e) {
+                if (!checkChar(e)) {
+                    e.preventDefault();
+                }
+            });
+            function checkChar(e) {
+                var char = String.fromCharCode(e.keyCode);
+
+                console.log(char);
+                var pattern = '[0-9]';
+                if (char.match(pattern)) {
+                    return true;
+                }
+            }
+        });
 
     </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
