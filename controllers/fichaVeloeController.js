@@ -368,18 +368,18 @@ module.exports = {
 
         let id_034 = id_006
 
-        let id_035 = campos.NOME_REPRESENTANTE
+        let id_035 = veloe_campos[10].valor
 
-        let calcNome_Representante = id_008.length
+        let id_036 = campos.NOME_REPRESENTANTE
+
+        let calcNome_Representante = id_036.length
         let valNome_Representante = 35 - calcNome_Representante
 
-        if (id_035.length < 35) {
-            id_035 = id_035 + espacos.substring(0, valNome_Representante)
+        if (id_036.length < 35) {
+            id_036 = id_036 + espacos.substring(0, valNome_Representante)
         }
 
-        let id_036 = campos.CPF_REPRESENTANTE.replace(/[^\d]+/g, '')
-
-        let id_037 = veloe_campos[10].valor
+        let id_037 = campos.CPF_REPRESENTANTE.replace(/[^\d]+/g, '')
 
         let id_038 = campos.DATA_VINCULO_EMPRESA
 
@@ -441,9 +441,9 @@ module.exports = {
         let id_047 = campos.RAMAL_PRINCIPAL
 
         let calRamalPrincipal = id_047.length
-        let valRamalPrincipal = 5 - calRamalPrincipal
+        let valRamalPrincipal = 6 - calRamalPrincipal
 
-        if (id_047.length < 5) {
+        if (id_047.length < 6) {
             id_047 = id_047 + espacos.substring(0, valRamalPrincipal)
         }
 
@@ -451,10 +451,77 @@ module.exports = {
 
         let gerarLinha_5 = id_033 + id_034 + id_035 + id_036 + id_037 + id_038 + id_039 + id_040 + id_041 + id_042 + id_043 + id_044 + id_045 + id_046 + id_047 + id_048 + "\r\n"
 
+        let id_049 = veloe_campos[15].valor
 
-        console.log(gerarLinha_3.length)
+        let id_050  = campos.EMAIL_REPRESENTANTE
 
-        fs.writeFile('Veloe\\TERADE_' + id_002 + "_" + id_003 + ".txt", gerarLinha_1 + gerarLinha_2 + gerarLinha_3 + gerarLinha_4 + gerarLinha_5, (err) => {
+        if (id_050 == undefined) {
+            id_050 = espacos.substring(0, 40)
+        } else {
+
+        let calEmailRepresentante = id_050.length
+        let valEmailRepresentante = 40 - calEmailRepresentante
+
+        if (id_050.length < 40) {
+            id_050 = id_050 + espacos.substring(0, valEmailRepresentante)    
+        }
+    }
+
+        let id_051 = veloe_campos[16].valor
+
+        let id_052 = campos.NOME_CONTATO
+
+        let calNomeContato = id_052.length
+        let valNomeContato = 35 - calNomeContato
+
+        if (id_052.length < 35) {
+            id_052 = id_052 + espacos.substring(0, valNomeContato)    
+        }
+
+        let id_053 = veloe_campos[17].valor
+
+        let id_054 = campos.DDD_CONTATO
+
+        if (id_054 == "") { id_054 = zeros.substring(0, 5) } else {
+            if (id_054 < 10) { id_054 = zeros.substring(0, 4) + id_054 } else {
+                if (id_054 < 100) { id_054 = zeros.substring(0, 3) + id_054 } else {
+                    if (id_054 < 1000) { id_054 = zeros.substring(0, 2) + id_054 } else {
+                        if (id_id_054045 < 10000) { id_054 = zeros.substring(0, 1) + id_054 }}}}}
+
+        let id_055 = id_043
+
+        let id_056 = campos.RAMAL_CONTATO
+
+        let calRamalContato = id_056.length
+        let valRamalContato = 6 - calRamalContato
+
+        if (id_056.length < 6) {
+            id_056 = id_056 + espacos.substring(0, valRamalContato)
+        }
+
+        let id_057 = veloe_campos[18].valor
+
+        let id_058  = campos.EMAIL_CONTATO
+
+        console.log(id_058)
+
+        if (id_058 == undefined) {
+            id_058 = espacos.substring(0, 40)
+        } else {
+
+            let calEmailContato = id_058.length
+            let valEmailContato = 40 - calEmailContato
+
+            if (id_058.length < 40) {
+                id_058 = id_058 + espacos.substring(0, valEmailContato)
+            }
+        }
+
+        let id_059 = veloe_campos[19].valor
+
+        let gerarLinha_6 = id_049 + id_050 + id_051 + id_052 + id_053 + id_054 + id_055 + id_056 + id_057 + id_058 + id_059 + "\r\n"
+
+        fs.writeFile('Veloe\\TERADE_' + id_002 + "_" + id_003 + ".txt", gerarLinha_1 + gerarLinha_2 + gerarLinha_3 + gerarLinha_4 + gerarLinha_5 + gerarLinha_6, (err) => {
             if (err) throw err;
             console.log("O arquivo foi criado!");
         })
