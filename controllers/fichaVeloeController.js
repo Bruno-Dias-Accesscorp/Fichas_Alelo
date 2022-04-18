@@ -216,11 +216,12 @@ module.exports = {
 
         let id_020 = campos.NUMERO_LOGRADOURO
 
-        if (id_020 == "") { id_020 = espacos.substring(0, 5) } else {
-            if (id_020 < 10) { id_020 = id_020 + espacos.substring(0, 4) } else {
-                if (id_020 < 100) { id_020 = id_020 + espacos.substring(0, 3) } else {
-                    if (id_020 < 1000) { id_020 = id_020 + espacos.substring(0, 2) } else {
-                        if (id_020 < 10000) { id_020 = id_020 + espacos.substring(0, 1) + id_020 }}}}}
+        let calcNumeroLogradouro = id_020.length
+        let valNumeroLogradouro = 5 - calcNumeroLogradouro
+
+        if (id_020.length < 5) {
+            id_020 = id_020 + espacos.substring(0, valNumeroLogradouro)
+        }
         
         let id_021 = campos.COMPLEMENTO_LOGRADOURO
         
@@ -411,28 +412,11 @@ module.exports = {
 
         let id_043 = campos.TELEFONE_CONTATO
 
-        if (id_043 == "") { id_043 = espacos.substring(0, 12) } else {
-            if (id_043 < 10) { id_043 = id_043 + espacos.substring(0, 11) } else {
-                if (id_043 < 100) { id_043 = id_043 + espacos.substring(0, 10) } else {
-                    if (id_043 < 1000) { id_043 = id_043 + espacos.substring(0, 9) } else {
-                        if (id_043 < 10) { id_043 = id_043 + espacos.substring(0, 8) } else {
-                            if (id_043 < 100) { id_043 = id_043 + espacos.substring(0, 7) } else {
-                                if (id_043 < 1000) { id_043 = id_043 + espacos.substring(0, 6) } else {
-                                    if (id_043 < 1000) { id_043 = id_043 + espacos.substring(0, 5) } else {
-                                        if (id_043 < 10) { id_043 = id_043 + espacos.substring(0, 4) } else {
-                                            if (id_043 < 100) { id_043 = id_043 + espacos.substring(0, 3) } else {
-                                                if (id_043 < 1000) { id_043 = id_043 + espacos.substring(0, 2) } else {
-                                                    if (id_043 < 10000) { id_043 = id_043 + espacos.substring(0, 1) + id_043 }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+        let calTelefoneContato = id_043.length
+        let valTelefoneContato = 12 - calTelefoneContato
+
+        if (id_043.length < 12) {
+            id_043 = id_043 + espacos.substring(0, valTelefoneContato)
         }
 
         let id_044 = veloe_campos[13].valor
@@ -447,48 +431,30 @@ module.exports = {
 
         let id_046 = campos.TELEFONE_PRINCIPAL
 
-        if (id_046 == "") { id_046 = espacos.substring(0, 12) } else {
-            if (id_046 < 10) { id_046 = id_046 + espacos.substring(0, 11) } else {
-                if (id_046 < 100) { id_046 = id_046 + espacos.substring(0, 10) } else {
-                    if (id_046 < 1000) { id_046 = id_046 + espacos.substring(0, 9) } else {
-                        if (id_046 < 10) { id_046 = id_046 + espacos.substring(0, 8) } else {
-                            if (id_046 < 100) { id_046 = id_046 + espacos.substring(0, 7) } else {
-                                if (id_046 < 1000) { id_046 = id_046 + espacos.substring(0, 6) } else {
-                                    if (id_046 < 1000) { id_046 = id_046 + espacos.substring(0, 5) } else {
-                                        if (id_046 < 10) { id_046 = id_046 + espacos.substring(0, 4) } else {
-                                            if (id_046 < 100) { id_046 = id_046 + espacos.substring(0, 3) } else {
-                                                if (id_046 < 1000) { id_046 = id_046 + espacos.substring(0, 2) } else {
-                                                    if (id_046 < 10000) { id_046 = id_046 + espacos.substring(0, 1) }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+        let calTelefonePrincipal = id_046.length
+        let valTelefonePrincipal = 12 - calTelefonePrincipal
+
+        if (id_046.length < 12) {
+            id_046 = id_046 + espacos.substring(0, valTelefonePrincipal)
         }
-
-
 
         let id_047 = campos.RAMAL_PRINCIPAL
 
-        if (id_047 == "") { id_047 = espacos.substring(0, 6) } else {
-            if (id_047 < 10) { id_047 = id_047 +  espacos.substring(0, 5) } else {
-                if (id_047 < 10) { id_047 = id_047 +  espacos.substring(0, 4) } else {
-                if (id_047 < 100) { id_047 = id_047 + espacos.substring(0, 3) } else {
-                    if (id_047 < 1000) { id_047 = id_047 + espacos.substring(0, 2) } else {
-                        if (id_047 < 10000) { id_047 = id_047 + espacos.substring(0, 1) } else {
-                            if (id_047 < 10000) { id_047 = id_047 + espacos.substring(0, 1) }}}}}}}
+        let calRamalPrincipal = id_047.length
+        let valRamalPrincipal = 5 - calRamalPrincipal
 
-        let gerarLinha_5 = id_033 + id_034 + id_035 + id_036 + id_037 + id_038 + id_039 + id_040 + id_041 + id_042 + id_043 + id_044 + id_045 + id_046
+        if (id_047.length < 5) {
+            id_047 = id_047 + espacos.substring(0, valRamalPrincipal)
+        }
+
+        let id_048 = veloe_campos[14].valor
+
+        let gerarLinha_5 = id_033 + id_034 + id_035 + id_036 + id_037 + id_038 + id_039 + id_040 + id_041 + id_042 + id_043 + id_044 + id_045 + id_046 + id_047 + id_048 + "\r\n"
 
 
         console.log(gerarLinha_3.length)
 
-        fs.writeFile('Veloe\\TERADE_' + id_002 + "_" + id_003 + ".txt", gerarLinha_1 + gerarLinha_2 + gerarLinha_3 + gerarLinha_4, (err) => {
+        fs.writeFile('Veloe\\TERADE_' + id_002 + "_" + id_003 + ".txt", gerarLinha_1 + gerarLinha_2 + gerarLinha_3 + gerarLinha_4 + gerarLinha_5, (err) => {
             if (err) throw err;
             console.log("O arquivo foi criado!");
         })
