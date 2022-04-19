@@ -1,6 +1,6 @@
 const { time } = require("console");
 const fs = require("fs");
-const campos_veloe = require("../JSON/campos_veloe");
+const dos2unix = require("dos2unix")
 const veloe_campos = require("../JSON/campos_veloe");
 const zeros = "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
 const espacos = "                                                                                                                                                                                                                                                                                                             "
@@ -784,16 +784,340 @@ module.exports = {
 
         let id_094 = veloe_campos[31].valor
 
-        console.log(id_094)
-
-
         let gerarLinha_9 = id_086 + id_087 + id_088 + id_089 + id_090 + id_091 + id_092 + id_093 + id_094 + "\r\n"
 
+        let id_095 = veloe_campos[32].valor
 
-        fs.writeFile('Veloe\\TERADE_' + id_002 + "_" + id_003 + ".txt", gerarLinha_1 + gerarLinha_2 + gerarLinha_3 + gerarLinha_4 + gerarLinha_5 + gerarLinha_6 + gerarLinha_7 + gerarLinha_8 + gerarLinha_9, (err) => {
+        let id_096 = id_006
+
+        let id_097 = veloe_campos[33].valor
+
+        let id_098 = id_030
+
+        let id_099 = id_031
+
+        let id_100 = veloe_campos[34].valor
+
+        let id_101 = id_093
+
+        let id_102 = veloe_campos[35].valor
+
+        let gerarLinha_10 = id_095 + id_096 + id_097 + id_098 + id_099 + id_100 + id_101 + id_102 + "\r\n"
+
+        let id_103 = veloe_campos[36].valor
+
+        let id_104 = id_006
+
+        let id_105 = veloe_campos[37].valor
+
+        let id_106 = id_030
+
+        let id_107 = id_031
+
+        let id_108 = campos.TARIFA_VELOETAG.replace(/[^\d]+/g, '')
+
+        if (id_108 == "") { id_108 = zeros.substring(0, 11) } else {
+            if (id_108 < 10) { id_108 = zeros.substring(0, 10) + id_108 } else {
+                if (id_108 < 100) { id_108 = zeros.substring(0, 9) + id_108 } else {
+                    if (id_108 < 1000) { id_108 = zeros.substring(0, 8) + id_108 } else {
+                        if (id_108 < 10000) { id_108 = zeros.substring(0, 7) + id_108 } else {
+                            if (id_108 < 100000) { id_108 = zeros.substring(0, 6) + id_108 } else {
+                                if (id_108 < 1000000) { id_108 = zeros.substring(0, 5) + id_108 } else {
+                                    if (id_108 < 10000000) { id_108 = zeros.substring(0, 4) + id_108 } else {
+                                        if (id_108 < 100000000) { id_108 = zeros.substring(0, 3) + id_108 } else {
+                                            if (id_108 < 1000000000) { id_108 = zeros.substring(0, 2) + id_108 } else {
+                                                if (id_108 < 10000000000) { id_108 = zeros.substring(0, 1) + id_108 } else {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        let id_109 = veloe_campos[38].valor
+
+        let id_110 = id_093
+
+        let id_111 = veloe_campos[39].valor
+
+        let gerarLinha_11 = id_103 + id_104 + id_105 + id_106 + id_107 + id_108 + id_109 + id_110 + id_111 + "\r\n"
+
+        let id_112 = veloe_campos[40].valor
+
+        let id_113 = id_006
+
+        let id_114 = veloe_campos[41].valor
+        
+        let id_115 = id_030
+
+        let id_116 = id_031
+
+        let id_117 = campos.TARIFA_EMISSAO_EXTRATO.replace(/[^\d]+/g, '')
+
+        if (id_117 == "") { id_117 = zeros.substring(0, 11) } else {
+            if (id_117 < 10) { id_117 = zeros.substring(0, 10) + id_117 } else {
+                if (id_117 < 100) { id_117 = zeros.substring(0, 9) + id_117 } else {
+                    if (id_117 < 1000) { id_117 = zeros.substring(0, 8) + id_117 } else {
+                        if (id_117 < 10000) { id_117 = zeros.substring(0, 7) + id_117 } else {
+                            if (id_117 < 100000) { id_117 = zeros.substring(0, 6) + id_117 } else {
+                                if (id_117 < 1000000) { id_117 = zeros.substring(0, 5) + id_117 } else {
+                                    if (id_117 < 10000000) { id_117 = zeros.substring(0, 4) + id_117 } else {
+                                        if (id_117 < 100000000) { id_117 = zeros.substring(0, 3) + id_117 } else {
+                                            if (id_117 < 1000000000) { id_117 = zeros.substring(0, 2) + id_117 } else {
+                                                if (id_117 < 10000000000) { id_117 = zeros.substring(0, 1) + id_117 } else {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        let id_118 = veloe_campos[42].valor
+
+        let id_119 = id_093
+
+        let id_120 = veloe_campos[43].valor
+
+        let gerarLinha_12 = id_112 + id_113 + id_114 + id_115 + id_116 + id_117 + id_118 + id_119 + id_120 + "\r\n"
+
+        let id_121 = veloe_campos[44].valor
+
+        let id_122 = id_006
+
+        let id_123 = veloe_campos[45].valor
+        
+        let id_124 = id_030
+
+        let id_125 = id_031
+
+        let id_126 = campos.TARIFA_ADESAO.replace(/[^\d]+/g, '')
+
+        if (id_126 == "") { id_126 = zeros.substring(0, 11) } else {
+            if (id_126 < 10) { id_126 = zeros.substring(0, 10) + id_126 } else {
+                if (id_126 < 100) { id_126 = zeros.substring(0, 9) + id_126 } else {
+                    if (id_126 < 1000) { id_126 = zeros.substring(0, 8) + id_126 } else {
+                        if (id_126 < 10000) { id_126 = zeros.substring(0, 7) + id_126 } else {
+                            if (id_126 < 100000) { id_126 = zeros.substring(0, 6) + id_126 } else {
+                                if (id_126 < 1000000) { id_126 = zeros.substring(0, 5) + id_126 } else {
+                                    if (id_126 < 10000000) { id_126 = zeros.substring(0, 4) + id_126 } else {
+                                        if (id_126 < 100000000) { id_126 = zeros.substring(0, 3) + id_126 } else {
+                                            if (id_126 < 1000000000) { id_126 = zeros.substring(0, 2) + id_126 } else {
+                                                if (id_126 < 10000000000) { id_126 = zeros.substring(0, 1) + id_126 } else {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        let id_127 = veloe_campos[46].valor
+
+        let id_128 = id_093
+
+        let id_129 = veloe_campos[47].valor
+
+        let gerarLinha_13 = id_121 + id_122 + id_123 + id_124 + id_125 + id_126 + id_127 + id_128 + id_129 + "\r\n"
+
+        let id_130 = veloe_campos[48].valor
+
+        let id_131 = id_006
+
+        let id_132 = veloe_campos[49].valor
+        
+        let id_133 = id_030
+
+        let id_134 = id_031
+
+        let id_135 = campos.TARIFA_INATIVACAO.replace(/[^\d]+/g, '')
+
+        if (id_135 == "") { id_135 = zeros.substring(0, 11) } else {
+            if (id_135 < 10) { id_135 = zeros.substring(0, 10) + id_135 } else {
+                if (id_135 < 100) { id_135 = zeros.substring(0, 9) + id_135 } else {
+                    if (id_135 < 1000) { id_135 = zeros.substring(0, 8) + id_135 } else {
+                        if (id_135 < 10000) { id_135 = zeros.substring(0, 7) + id_135 } else {
+                            if (id_135 < 100000) { id_135 = zeros.substring(0, 6) + id_135 } else {
+                                if (id_135 < 1000000) { id_135 = zeros.substring(0, 5) + id_135 } else {
+                                    if (id_135 < 10000000) { id_135 = zeros.substring(0, 4) + id_135 } else {
+                                        if (id_135 < 100000000) { id_135 = zeros.substring(0, 3) + id_135 } else {
+                                            if (id_135 < 1000000000) { id_135 = zeros.substring(0, 2) + id_135 } else {
+                                                if (id_135 < 10000000000) { id_135 = zeros.substring(0, 1) + id_135 } else {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        let id_136 = veloe_campos[50].valor
+
+        let id_137 = id_093
+
+        let id_138 = veloe_campos[51].valor
+
+        let gerarLinha_14 = id_130 + id_131 + id_132 + id_133 + id_134 + id_135 + id_136 + id_137 + id_138 + "\r\n"
+
+        let id_139 = veloe_campos[52].valor
+
+        let id_140 = id_006
+
+        let id_141 = veloe_campos[53].valor
+        
+        let id_142 = id_030
+
+        let id_143 = id_031
+
+        let id_144 = campos.TARIFA_PRECO_LISTA.replace(/[^\d]+/g, '')
+
+        if (id_144 == "") { id_144 = zeros.substring(0, 11) } else {
+            if (id_144 < 10) { id_144 = zeros.substring(0, 10) + id_144 } else {
+                if (id_144 < 100) { id_144 = zeros.substring(0, 9) + id_144 } else {
+                    if (id_144 < 1000) { id_144 = zeros.substring(0, 8) + id_144 } else {
+                        if (id_144 < 10000) { id_144 = zeros.substring(0, 7) + id_144 } else {
+                            if (id_144 < 100000) { id_144 = zeros.substring(0, 6) + id_144 } else {
+                                if (id_144 < 1000000) { id_144 = zeros.substring(0, 5) + id_144 } else {
+                                    if (id_144 < 10000000) { id_144 = zeros.substring(0, 4) + id_144 } else {
+                                        if (id_144 < 100000000) { id_144 = zeros.substring(0, 3) + id_144 } else {
+                                            if (id_144 < 1000000000) { id_144 = zeros.substring(0, 2) + id_144 } else {
+                                                if (id_144 < 10000000000) { id_144 = zeros.substring(0, 1) + id_144 } else {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        let id_145 = veloe_campos[54].valor
+
+        let id_146 = id_093
+
+        let id_147 = veloe_campos[55].valor
+
+        let gerarLinha_15 = id_139 + id_140 + id_141 + id_142 + id_143 + id_144 + id_145 + id_146 + id_147 + "\r\n"
+
+        let id_148 = veloe_campos[56].valor
+
+        let id_149 = id_006
+
+        let id_150 = veloe_campos[57].valor
+        
+        let id_151 = id_030
+
+        let id_152 = id_031
+
+        let id_153 = campos.TARIFA_EMISSAO_EMERGENCIAL.replace(/[^\d]+/g, '')
+
+        if (id_153 == "") { id_153 = zeros.substring(0, 11) } else {
+            if (id_153 < 10) { id_153 = zeros.substring(0, 10) + id_153 } else {
+                if (id_153 < 100) { id_153 = zeros.substring(0, 9) + id_153 } else {
+                    if (id_153 < 1000) { id_153 = zeros.substring(0, 8) + id_153 } else {
+                        if (id_153 < 10000) { id_153 = zeros.substring(0, 7) + id_153 } else {
+                            if (id_153 < 100000) { id_153 = zeros.substring(0, 6) + id_153 } else {
+                                if (id_153 < 1000000) { id_153 = zeros.substring(0, 5) + id_153 } else {
+                                    if (id_153 < 10000000) { id_153 = zeros.substring(0, 4) + id_153 } else {
+                                        if (id_153 < 100000000) { id_153 = zeros.substring(0, 3) + id_153 } else {
+                                            if (id_153 < 1000000000) { id_153 = zeros.substring(0, 2) + id_153 } else {
+                                                if (id_153 < 10000000000) { id_153 = zeros.substring(0, 1) + id_153 } else {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        let id_154 = veloe_campos[58].valor
+
+        let id_155 = id_093
+
+        let id_156 = veloe_campos[59].valor
+
+        let gerarLinha_16 = id_148 + id_149 + id_150 + id_151 + id_152 + id_153 + id_154 + id_155 + id_156 + "\r\n"
+
+        let id_157 = veloe_campos[60].valor
+
+        let id_158 = id_006
+
+        let id_159 = veloe_campos[61].valor
+        
+        let id_160 = id_030
+
+        let id_161 = id_031
+
+        let id_162 = campos.TARIFA_DEVOLUCAO_SALDO.replace(/[^\d]+/g, '')
+
+        if (id_162 == "") { id_162 = zeros.substring(0, 11) } else {
+            if (id_162 < 10) { id_162 = zeros.substring(0, 10) + id_162 } else {
+                if (id_162 < 100) { id_162 = zeros.substring(0, 9) + id_162 } else {
+                    if (id_162 < 1000) { id_162 = zeros.substring(0, 8) + id_162 } else {
+                        if (id_162 < 10000) { id_162 = zeros.substring(0, 7) + id_162 } else {
+                            if (id_162 < 100000) { id_162 = zeros.substring(0, 6) + id_162 } else {
+                                if (id_162 < 1000000) { id_162 = zeros.substring(0, 5) + id_162 } else {
+                                    if (id_162 < 10000000) { id_162 = zeros.substring(0, 4) + id_162 } else {
+                                        if (id_162 < 100000000) { id_162 = zeros.substring(0, 3) + id_162 } else {
+                                            if (id_162 < 1000000000) { id_162 = zeros.substring(0, 2) + id_162 } else {
+                                                if (id_162 < 10000000000) { id_162 = zeros.substring(0, 1) + id_162 } else {
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        let id_163 = veloe_campos[62].valor
+
+        let id_164 = id_093
+
+        let id_165 = veloe_campos[63].valor
+
+        let gerarLinha_17 = id_157 + id_158 + id_159 + id_160 + id_161 + id_162 + id_163 + id_164 + id_165 + "\r\n"
+
+        let id_166 = veloe_campos[64].valor
+
+        let gerarLinha_18 = id_166
+
+        fs.writeFile('Veloe\\TERADE_' + id_002 + "_" + id_003 + ".txt", gerarLinha_1 + gerarLinha_2 + gerarLinha_3 + gerarLinha_4 + gerarLinha_5 + gerarLinha_6 + gerarLinha_7 + gerarLinha_8 + gerarLinha_9 + gerarLinha_10 + gerarLinha_11 + gerarLinha_12 + gerarLinha_13 + gerarLinha_14 + gerarLinha_15 + gerarLinha_16 + gerarLinha_17 + gerarLinha_18, (err) => {
             if (err) throw err;
+            // let arquivo ='Veloe\\TERADE_' + id_002 + "_" + id_003 
+            // dos2unix -- -arquivo
             console.log("O arquivo foi criado!");
         })
+
+        
+
         res.render("veloe")
     },
 }

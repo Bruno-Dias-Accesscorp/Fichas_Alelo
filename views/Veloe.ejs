@@ -397,7 +397,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">R$</span>
                                                 </div>
-                                                <input type="text" class="form-control">
+                                                <input type="text" name="TARIFA_PRECO_LISTA" maxlength="11" id="D53" class="form-control">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">0,00</span>
                                                 </div>
@@ -423,7 +423,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">R$</span>
                                                 </div>
-                                                <input type="text" class="form-control">
+                                                <input type="text" name="TARIFA_ADESAO" id="D51" maxlength="11" class="form-control">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">0,00</span>
                                                 </div>
@@ -449,7 +449,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">R$</span>
                                                 </div>
-                                                <input type="text" class="form-control">
+                                                <input type="text" name="TARIFA_VELOETAG" id="D49" maxlength="11" class="form-control">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">0,00</span>
                                                 </div>
@@ -468,7 +468,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">R$</span>
                                                 </div>
-                                                <input type="text" class="form-control">
+                                                <input type="text" name="TARIFA_INATIVACAO" id="D52" maxlength="11" class="form-control">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">0,00</span>
                                                 </div>
@@ -481,7 +481,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">R$</span>
                                                 </div>
-                                                <input type="text" class="form-control">
+                                                <input type="text" name="TARIFA_DEVOLUCAO_SALDO" id="D55" maxlength="11" class="form-control">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">0,00</span>
                                                 </div>
@@ -496,7 +496,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">R$</span>
                                                 </div>
-                                                <input type="text" class="form-control">
+                                                <input type="text" name="TARIFA_EMISSAO_EXTRATO" id="D50" maxlength="11" class="form-control">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">0,00</span>
                                                 </div>
@@ -509,7 +509,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">R$</span>
                                                 </div>
-                                                <input type="text" class="form-control">
+                                                <input type="text" name="TARIFA_EMISSAO_EMERGENCIAL" maxlength="11" id="D54" class="form-control">
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">0,00</span>
                                                 </div>
@@ -1220,6 +1220,132 @@
 
                 console.log(char);
                 var pattern = '[0-9]';
+                if (char.match(pattern)) {
+                    return true;
+                }
+            }
+        });
+
+        document.getElementById('D49').addEventListener('keyup', (ev) => {
+            const input2 = ev.target;
+            input2.addEventListener("keypress", function (e) {
+                if (!checkChar(e)) {
+                    e.preventDefault();
+                }
+            });
+            function checkChar(e) {
+                var char = String.fromCharCode(e.keyCode);
+
+                console.log(char);
+                var pattern = '[0-9-","]';
+                if (char.match(pattern)) {
+                    return true;
+                }
+            }
+        });
+
+        document.getElementById('D50').addEventListener('keyup', (ev) => {
+            const input2 = ev.target;
+            input2.addEventListener("keypress", function (e) {
+                if (!checkChar(e)) {
+                    e.preventDefault();
+                }
+            });
+            function checkChar(e) {
+                var char = String.fromCharCode(e.keyCode);
+
+                console.log(char);
+                var pattern = '[0-9-","]';
+                if (char.match(pattern)) {
+                    return true;
+                }
+            }
+        });
+
+        document.getElementById('D51').addEventListener('keyup', (ev) => {
+            const input2 = ev.target;
+            input2.addEventListener("keypress", function (e) {
+                if (!checkChar(e)) {
+                    e.preventDefault();
+                }
+            });
+            function checkChar(e) {
+                var char = String.fromCharCode(e.keyCode);
+
+                console.log(char);
+                var pattern = '[0-9-","]';
+                if (char.match(pattern)) {
+                    return true;
+                }
+            }
+        });
+
+        document.getElementById('D52').addEventListener('keyup', (ev) => {
+            const input2 = ev.target;
+            input2.addEventListener("keypress", function (e) {
+                if (!checkChar(e)) {
+                    e.preventDefault();
+                }
+            });
+            function checkChar(e) {
+                var char = String.fromCharCode(e.keyCode);
+
+                console.log(char);
+                var pattern = '[0-9-","]';
+                if (char.match(pattern)) {
+                    return true;
+                }
+            }
+        });
+
+        document.getElementById('D53').addEventListener('keyup', (ev) => {
+            const input2 = ev.target;
+            input2.addEventListener("keypress", function (e) {
+                if (!checkChar(e)) {
+                    e.preventDefault();
+                }
+            });
+            function checkChar(e) {
+                var char = String.fromCharCode(e.keyCode);
+
+                console.log(char);
+                var pattern = '[0-9-","]';
+                if (char.match(pattern)) {
+                    return true;
+                }
+            }
+        });
+
+        document.getElementById('D54').addEventListener('keyup', (ev) => {
+            const input2 = ev.target;
+            input2.addEventListener("keypress", function (e) {
+                if (!checkChar(e)) {
+                    e.preventDefault();
+                }
+            });
+            function checkChar(e) {
+                var char = String.fromCharCode(e.keyCode);
+
+                console.log(char);
+                var pattern = '[0-9-","]';
+                if (char.match(pattern)) {
+                    return true;
+                }
+            }
+        });
+
+        document.getElementById('D55').addEventListener('keyup', (ev) => {
+            const input2 = ev.target;
+            input2.addEventListener("keypress", function (e) {
+                if (!checkChar(e)) {
+                    e.preventDefault();
+                }
+            });
+            function checkChar(e) {
+                var char = String.fromCharCode(e.keyCode);
+
+                console.log(char);
+                var pattern = '[0-9-","]';
                 if (char.match(pattern)) {
                     return true;
                 }
