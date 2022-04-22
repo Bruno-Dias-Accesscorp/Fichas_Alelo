@@ -1,9 +1,21 @@
 const { time } = require("console");
 const fs = require("fs");
-const dos2unix = require("dos2unix")
+var D2UConverter = require('dos2unix').dos2unix;
 const veloe_campos = require("../JSON/campos_veloe");
 const zeros = "0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
 const espacos = "                                                                                                                                                                                                                                                                                                             "
+
+
+var  d2u  = new D2UConverter () 
+  .on('error', function(err) {
+    console.error(err);
+  })
+  .on('end', function(stats) {
+    console.log(stats);
+  });
+  
+
+
 
 module.exports = {
     async veloe(req, res) {
@@ -332,7 +344,7 @@ module.exports = {
         let anoInicioValidade
 
         if (id_030 == "") {
-            id_030 = zeros.substring(0, 8)
+            id_030 = id_002
         } else {
             let data = id_030.replace("-", '')
             let data_2 = data.replace("-", '')
@@ -543,7 +555,7 @@ module.exports = {
             if (id_063 < 10) { id_063 = zeros.substring(0, 4) + id_063 } else {
                 if (id_063 < 100) { id_063 = zeros.substring(0, 3) + id_063 } else {
                     if (id_063 < 1000) { id_063 = zeros.substring(0, 2) + id_063 } else {
-                        if (id_id_063 < 10000) { id_063 = zeros.substring(0, 1) + id_063 }
+                        if (id_063 < 10000) { id_063 = zeros.substring(0, 1) + id_063 }
                     }
                 }
             }
@@ -586,7 +598,7 @@ module.exports = {
             if (id_068 < 10) { id_068 = zeros.substring(0, 4) + id_068 } else {
                 if (id_068 < 100) { id_068 = zeros.substring(0, 3) + id_068 } else {
                     if (id_068 < 1000) { id_068 = zeros.substring(0, 2) + id_068 } else {
-                        if (id_id_068 < 10000) { id_068 = zeros.substring(0, 1) + id_068 }
+                        if (id_068 < 10000) { id_068 = zeros.substring(0, 1) + id_068 }
                     }
                 }
             }
@@ -694,7 +706,7 @@ module.exports = {
                 if (id_078 < 10) { id_078 = zeros.substring(0, 4) + id_078 } else {
                     if (id_078 < 100) { id_078 = zeros.substring(0, 3) + id_078 } else {
                         if (id_078 < 1000) { id_078 = zeros.substring(0, 2) + id_078 } else {
-                            if (id_id_078 < 10000) { id_078 = zeros.substring(0, 1) + id_078 }
+                            if (id_078 < 10000) { id_078 = zeros.substring(0, 1) + id_078 }
                         }
                     }
                 }
@@ -757,12 +769,12 @@ module.exports = {
                 if (id_091 < 100) { id_091 = zeros.substring(0, 9) + id_091 } else {
                     if (id_091 < 1000) { id_091 = zeros.substring(0, 8) + id_091 } else {
                         if (id_091 < 10000) { id_091 = zeros.substring(0, 7) + id_091 } else {
-                            if (id_091 < 100000) { id_091 = zeros.substring(0, 6) + id_091 } else {
-                                if (id_091 < 1000000) { id_091 = zeros.substring(0, 5) + id_091 } else {
-                                    if (id_091 < 10000000) { id_091 = zeros.substring(0, 4) + id_091 } else {
-                                        if (id_091 < 100000000) { id_091 = zeros.substring(0, 3) + id_091 } else {
-                                            if (id_091 < 1000000000) { id_091 = zeros.substring(0, 2) + id_091 } else {
-                                                if (id_091 < 10000000000) { id_091 = zeros.substring(0, 1) + id_091 } else {
+                        if (id_091 < 100000) { id_091 = zeros.substring(0, 6) + id_091 } else {
+                            if (id_091 < 1000000) { id_091 = zeros.substring(0, 5) + id_091 } else {
+                                if (id_091 < 10000000) { id_091 = zeros.substring(0, 4) + id_091 } else {
+                                if (id_091 < 100000000) { id_091 = zeros.substring(0, 3) + id_091 } else {
+                                if (id_091 < 1000000000) { id_091 = zeros.substring(0, 2) + id_091 } else {
+                                if (id_091 < 10000000000) { id_091 = zeros.substring(0, 1) + id_091 } else {
                                                 }
                                             }
                                         }
@@ -775,12 +787,17 @@ module.exports = {
             }
         }
 
+
         let id_092 = veloe_campos[30].valor
 
         let id_093 = campos.QUANTIDADE_MESES_ISENCAO
 
-        if (id_093 == "") { id_093 = zeros.substring(0, 2) } else {
-            if (id_093 < 10) { id_093 = zeros.substring(0, 1) + id_093 }}
+        let id_093_1 = parseInt(id_093)
+
+        if (id_093_1 == "") { id_093 = zeros.substring(0, 2) } else {
+            if (id_093_1 < 10) { id_093 = zeros.substring(0, 1) + id_093_1 }}
+
+            console.log(id_093.length)
 
         let id_094 = veloe_campos[31].valor
 
@@ -1109,13 +1126,17 @@ module.exports = {
 
         let gerarLinha_18 = id_166
 
-        fs.writeFile('Veloe\\TERADE_' + id_002 + "_" + id_003 + ".txt", gerarLinha_1 + gerarLinha_2 + gerarLinha_3 + gerarLinha_4 + gerarLinha_5 + gerarLinha_6 + gerarLinha_7 + gerarLinha_8 + gerarLinha_9 + gerarLinha_10 + gerarLinha_11 + gerarLinha_12 + gerarLinha_13 + gerarLinha_14 + gerarLinha_15 + gerarLinha_16 + gerarLinha_17 + gerarLinha_18, (err) => {
-            if (err) throw err;
-            // let arquivo ='Veloe\\TERADE_' + id_002 + "_" + id_003 
-            // dos2unix -- -arquivo
-            console.log("O arquivo foi criado!");
-        })
+        // fs.writeFile('Veloe\\TERADE_' + id_002 + "_" + id_003 + ".txt", gerarLinha_1 + gerarLinha_2 + gerarLinha_3 + gerarLinha_4 + gerarLinha_5 + gerarLinha_6 + gerarLinha_7 + gerarLinha_8 + gerarLinha_9 + gerarLinha_10 + gerarLinha_11 + gerarLinha_12 + gerarLinha_13 + gerarLinha_14 + gerarLinha_15 + gerarLinha_16 + gerarLinha_17 + gerarLinha_18, (err) => {
+        //     if (err) throw err;
+        //     console.log("O arquivo foi criado!");
+        // })        
 
+        fs.writeFile('Veloe/TERADE_' + id_002 + "_" + id_003 + ".txt", gerarLinha_1 + gerarLinha_2 + gerarLinha_3 + gerarLinha_4 + gerarLinha_5 + gerarLinha_6 + gerarLinha_7 + gerarLinha_8 + gerarLinha_9 + gerarLinha_10 + gerarLinha_11 + gerarLinha_12 + gerarLinha_13 + gerarLinha_14 + gerarLinha_15 + gerarLinha_16 + gerarLinha_17 + gerarLinha_18, (err) => {
+            if (err) throw err;
+            // let arquivo = 'TERADE_20042022_001.txt'
+            // d2u.process(['Veloe/TERADE_20042022_001.txt']);
+            console.log("O arquivo foi criado!");
+        })        
         
 
         res.render("veloe")
