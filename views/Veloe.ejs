@@ -44,6 +44,7 @@
                                         <div class="col-md-6">
                                             <label for="name">CNPJ do Contratante</label>
                                             <input type="text" name="CNPJ" id="D15" class="form-control">
+                                            <span style="color: red;" id="validar" onchange="myCnpj" hidden>*CNPJ Invalido*</span>
                                         </div>
 
                                         <div class="col-md-6">
@@ -630,7 +631,94 @@
             var x = e.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,3})(\d{0,3})(\d{0,4})(\d{0,2})/);
             e.target.value = !x[2] ? x[1] : x[1] + '.' + x[2] + '.' + x[3] + '/' + x[4] + (x[5] ? '-' + x[5] : '');
         });
+
+        function myCnpj() {
+                
+                 let valor = document.getElementById('D15').velue
+                 document.getElementById('D15').velue = "1212"
+                 let cnpj = valor.replace(/[^\d]+/g, '');
+                 let validador
+
+                if (cnpj == ''){
+                    validador = false
+                }else{
+                    validador = true
+                }
+
+                if (cnpj.length != 14){
+                    validador = false
+                }else{
+                    validador = true
+                }
+                    
+
+                // Elimina CNPJs invalidos conhecidos
+                if (cnpj == "00000000000000" ||
+                    cnpj == "11111111111111" ||
+                    cnpj == "22222222222222" ||
+                    cnpj == "33333333333333" ||
+                    cnpj == "44444444444444" ||
+                    cnpj == "55555555555555" ||
+                    cnpj == "66666666666666" ||
+                    cnpj == "77777777777777" ||
+                    cnpj == "88888888888888" ||
+                    cnpj == "99999999999999"){
+                        validador = false
+                    }else{
+                    validador = true
+                }
+                    
+
+                // Valida DVs
+                tamanho = cnpj.length - 2
+                numeros = cnpj.substring(0, tamanho);
+                digitos = cnpj.substring(tamanho);
+                soma = 0;
+                pos = tamanho - 7;
+                for (i = tamanho; i >= 1; i--) {
+                    soma += numeros.charAt(tamanho - i) * pos--;
+                    if (pos < 2)
+                        pos = 9;
+                }
+                resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+                if (resultado != digitos.charAt(0)){
+                    validador = false
+                }else{
+                    validador = true
+                }
+                    
+
+                tamanho = tamanho + 1;
+                numeros = cnpj.substring(0, tamanho);
+                soma = 0;
+                pos = tamanho - 7;
+                for (i = tamanho; i >= 1; i--) {
+                    soma += numeros.charAt(tamanho - i) * pos--;
+                    if (pos < 2)
+                        pos = 9;
+                }
+                resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+                if (resultado != digitos.charAt(1)){
+                    validador = false
+                }else{
+                    validador = true
+                }
+                
+
+                let validar = document.getElementById('validar').value
+
+                if(validador){
+                validar.style.display = "none"
+            }else{
+                validar.style.display = "block"
+            }
+
+            }
+
+            
+
         
+
         document.getElementById('D16').addEventListener('keyup', (ev) => {
             const input = ev.target;
             input.addEventListener("keypress", function (e) {
